@@ -2,7 +2,7 @@ import threading
 import time
 
 def func1():
-    for i in range(10):
+    for i in range(5):
         print(f"Running t1, print {i}.")
         time.sleep(2)
 
