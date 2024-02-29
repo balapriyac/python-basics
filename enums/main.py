@@ -9,5 +9,9 @@ class TaskStatus(Enum):
 
 print(list(TaskStatus))
 
+
+num_statuses = len(TaskStatus)
+print(num_statuses) 
+
 for status in TaskStatus:
     print(status.name, status.value)
