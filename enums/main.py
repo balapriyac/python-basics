@@ -6,9 +6,9 @@ class TaskStatus(Enum):
     DONE = 2
     ABANDONED = -1
 
+print(isinstance(TaskStatus.TODO,Enum))
 
 print(list(TaskStatus))
-
 
 num_statuses = len(TaskStatus)
 print(num_statuses) 
