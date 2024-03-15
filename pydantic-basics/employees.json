@@ -1,0 +1,30 @@
+[
+    {
+        "name": "John Doe",
+        "age": 30,
+        "email": "john.doe@example.com",
+        "department": "Engineering",
+        "employee_id": "EMP001"
+    },
+    {
+        "name": "Jane Smith",
+        "age": 25,
+        "email": "jane.smith@example.com",
+        "department": "Marketing",
+        "employee_id": "EMP002"
+    },
+    {
+        "name": "Alice Brown",
+        "age": 35,
+        "email": "invalid-email",
+        "department": "Finance",
+        "employee_id": "EMP0034"
+    },
+    {
+        "name": "Dave West",
+        "age": 40,
+        "email": "dave.west@example.com",
+        "department": "HR",
+        "employee_id": "EMP005"
+    }
+]
