@@ -64,3 +64,20 @@ books = [
 # Convert dictionary to JSON string
 json_string = json.dumps(books, indent=4)
 print(json_string)
+
+
+# Sort keys
+person = {
+    "name": "John Doe",
+    "age": 30,
+    "email": "john@example.com",
+    "address": {
+        "city": "New York",
+        "zipcode": "10001",
+        "street": "123 Main Street"
+    }
+}
+
+# Convert dictionary to JSON string with sorted keys
+json_string = json.dumps(person, sort_keys=True, indent=4)
+print(json_string)
