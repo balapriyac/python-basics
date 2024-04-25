@@ -1,4 +1,4 @@
-# Natural Sorting in Python with `natsort`
+## Natural Sorting in Python with `natsort`
 
 To get started, you can install the `natsort` library using pip:
 
