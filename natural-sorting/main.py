@@ -15,3 +15,19 @@ versions = ["v-1.10", "v-1.2", "v-1.5"]
 sorted_versions = natsort.natsorted(versions)
 
 print(sorted_versions)
+
+# customize sorting w/ a key
+# List of tuples containing filename and size
+file_data = [
+	("data_20230101_080000.csv", 100),
+	("data_20221231_235959.csv", 150),
+	("data_20230201_120000.csv", 120),
+	("data_20230115_093000.csv", 80)
+]
+
+# Sort file data based on file size 
+sorted_file_data = natsort.natsorted(file_data, key=lambda x:x[1])
+
+# Print sorted file data
+for filename, size in sorted_file_data:
+	print(filename, size)
