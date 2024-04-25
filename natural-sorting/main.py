@@ -31,3 +31,12 @@ sorted_file_data = natsort.natsorted(file_data, key=lambda x:x[1])
 # Print sorted file data
 for filename, size in sorted_file_data:
 	print(filename, size)
+
+# Case-insensitive sorting
+# List of strings with mixed case
+words = ["apple", "Banana", "cat", "Dog", "Elephant"]
+
+# Sort words naturally with case-insensitivity
+sorted_words = natsort.natsorted(words, alg=natsort.ns.IGNORECASE)
+
+print(sorted_words)
