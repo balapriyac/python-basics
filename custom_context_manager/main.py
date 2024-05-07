@@ -50,3 +50,39 @@ with ConnectionManager(db_name) as conn:
         book_id, title, author, publication_year = record
         print(f"Book ID: {book_id}, Title: {title}, Author: {author}, Year: {publication_year}")
 
+
+# Writing a generator function with the `@contextmanager` decorator
+from contextlib import contextmanager
+
+@contextmanager
+def database_connection(db_name: str):
+    conn = sqlite3.connect(db_name)
+    try:
+        yield conn  # Provide the connection to the 'with' block
+    finally:
+        conn.close()  # Close the connection upon exiting the 'with' block
+
+# Example usage
+db_name = "library.db"
+
+# Using database_connection context manager directly
+with database_connection(db_name) as conn:
+    cursor = conn.cursor()
+
+    # Insert a set of book records
+    updated_books_data = [
+        ("The Catcher in the Rye", "J.D. Salinger", 1951),
+        ("To the Lighthouse", "Virginia Woolf", 1927),
+        ("Dune", "Frank Herbert", 1965),
+        ("Slaughterhouse-Five", "Kurt Vonnegut", 1969)
+    ]
+    cursor.executemany("INSERT INTO books (title, author, publication_year) VALUES (?, ?, ?)", updated_books_data)
+    conn.commit()
+
+    # Retrieve and print all book records
+    cursor.execute("SELECT * FROM books")
+    records = cursor.fetchall()
+    print("Updated Library Catalog:")
+    for record in records:
+        book_id, title, author, publication_year = record
+        print(f"Book ID: {book_id}, Title: {title}, Author: {author}, Year: {publication_year}")
