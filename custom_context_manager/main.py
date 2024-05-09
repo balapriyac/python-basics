@@ -49,7 +49,7 @@ with ConnectionManager(db_name) as conn:
     for record in records:
         book_id, title, author, publication_year = record
         print(f"Book ID: {book_id}, Title: {title}, Author: {author}, Year: {publication_year}")
-
+    cursor.close()
 
 # Writing a generator function with the `@contextmanager` decorator
 from contextlib import contextmanager
@@ -86,3 +86,4 @@ with database_connection(db_name) as conn:
     for record in records:
         book_id, title, author, publication_year = record
         print(f"Book ID: {book_id}, Title: {title}, Author: {author}, Year: {publication_year}")
+    cursor.close()
