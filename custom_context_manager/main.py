@@ -70,13 +70,13 @@ with database_connection(db_name) as conn:
     cursor = conn.cursor()
 
     # Insert a set of book records
-    updated_books_data = [
+    more_books_data = [
         ("The Catcher in the Rye", "J.D. Salinger", 1951),
         ("To the Lighthouse", "Virginia Woolf", 1927),
         ("Dune", "Frank Herbert", 1965),
         ("Slaughterhouse-Five", "Kurt Vonnegut", 1969)
     ]
-    cursor.executemany("INSERT INTO books (title, author, publication_year) VALUES (?, ?, ?)", updated_books_data)
+    cursor.executemany("INSERT INTO books (title, author, publication_year) VALUES (?, ?, ?)", more_books_data)
     conn.commit()
 
     # Retrieve and print all book records
