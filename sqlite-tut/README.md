@@ -1,3 +1,5 @@
+## Getting Started with SQLite Databases in Python
+
 To code along to this simple SQLite db interactions with Python, be sure to have a recent version of Python installed.
 
 Also, create and activate a dedicated venv for your project:
@@ -13,3 +15,8 @@ Install Faker (for synthetic data generation):
 $ pip3 install Faker
 ```
 
+This folder contains code snippets to:
+
+- Connect to an SQLite Db and create tables
+- CRUD operations
+- Perform simple filtering using WHERE clause
