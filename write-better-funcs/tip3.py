@@ -1,7 +1,7 @@
 # takes in an arg that's never used!
-def process_student_grades(student_id, grades, course_name, instructor='Jane Lee'):
+def process_student_grades(student_id, grades, course_name, instructor):
     average_grade = sum(grades) / len(grades)
-    return f"Student {student_id} achieved an average grade of {average_grade:.2f} in {course_name} taught by {instructor}."
+    return f"Student {student_id} achieved an average grade of {average_grade:.2f} in {course_name}."
 
 
 # better version!
