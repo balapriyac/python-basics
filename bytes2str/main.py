@@ -37,3 +37,9 @@ byte_data_invalid = b'Hello, World!\xff'
 string_data = byte_data_invalid.decode('utf-8', errors='ignore')
 
 print(string_data)
+
+# Converting bytes to string while replacing errors with a placeholder
+string_data_replace = byte_data_invalid.decode('utf-8', errors='replace')
+
+print(string_data_replace)  
+
