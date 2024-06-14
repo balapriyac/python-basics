@@ -30,3 +30,10 @@ string_data_unknown = byte_data_unknown.decode(encoding)
 
 print(string_data_unknown)  
 
+# Sample byte object with invalid sequence for UTF-8
+byte_data_invalid = b'Hello, World!\xff'
+
+# Converting bytes to string while ignoring errors
+string_data = byte_data_invalid.decode('utf-8', errors='ignore')
+
+print(string_data)
