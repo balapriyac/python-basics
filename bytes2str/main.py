@@ -14,3 +14,19 @@ string_data_utf16 = byte_data_utf16.decode('utf-16')
 
 print(string_data_utf16)  
 
+# using chardet to detect encoding
+import chardet
+
+# Sample byte object with unknown encoding
+byte_data_unknown = b'\xe4\xbd\xa0\xe5\xa5\xbd'
+
+# Detecting the encoding
+detected_encoding = chardet.detect(byte_data_unknown)
+encoding = detected_encoding['encoding']
+print(encoding)
+
+# Converting bytes to string using detected encoding
+string_data_unknown = byte_data_unknown.decode(encoding)
+
+print(string_data_unknown)  
+
