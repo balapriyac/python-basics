@@ -13,3 +13,13 @@ def is_prime(n):
         # This block executes if the loop did not encounter a break statement
         print(f"{n} is a prime number.")
         return True
+
+# Example 2: Searching for an Item in a List
+
+def search_item(lst, item):
+    for i in lst:
+        if i == item:
+            print(f"Found {item} in the list.")
+            break
+    else:
+        print(f"{item} is not in the list.")
