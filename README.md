@@ -4,6 +4,7 @@ Code and Links to Tutorials for some of my Python tutorials:
 
 | Topic | Link to Code | Link to Tutorial|
 |-------|--------------|-----------------|
+|Writing Better Python Functions|[Code](https://github.com/balapriyac/python-basics/tree/main/write-better-funcs)|[Tutorial](https://www.kdnuggets.com/5-tips-for-writing-better-python-functions)|
 |For-Else Loop Constrcut| [Code](https://github.com/balapriyac/python-basics/tree/main/for-else) | [Tutorial](https://www.freecodecamp.org/news/for-else-loop-in-python/)|
 |Common Python Gotchas!| [Code](https://github.com/balapriyac/python-basics/tree/main/common-gotchas) | [Tutorial](https://www.kdnuggets.com/5-common-python-gotchas-and-how-to-avoid-them)|
 |Custom Context Managers in Python| [Code](https://github.com/balapriyac/python-basics/tree/main/custom_context_manager)|[Tutorial](https://www.kdnuggets.com/how-to-create-custom-context-managers-in-python)|
