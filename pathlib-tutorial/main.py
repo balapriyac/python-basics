@@ -16,6 +16,8 @@ print("Base path:", base_path)
 print("Subdirectory path:", subdirectory_path)
 print("File path:", file_path)
 
+
+path = Path("/home/user/Downloads")
 # check if a path exists
 print(path.exists())
 
