@@ -22,3 +22,8 @@ print(path.exists())
 # check if a path is a file or a directory
 print(path.is_file())
 print(path.is_dir())
+
+# iterating over directory contents
+for item in path.iterdir():
+    print(item)
+
