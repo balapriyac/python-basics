@@ -16,4 +16,9 @@ print("Base path:", base_path)
 print("Subdirectory path:", subdirectory_path)
 print("File path:", file_path)
 
+# check if a path exists
+print(path.exists())
 
+# check if a path is a file or a directory
+print(path.is_file())
+print(path.is_dir())
