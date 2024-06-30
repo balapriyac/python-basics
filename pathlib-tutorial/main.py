@@ -29,3 +29,13 @@ print(path.is_dir())
 for item in path.iterdir():
     print(item)
 
+path = Path('/home/user/projectA')
+
+# simple globbing
+text_files = list(path.glob('*.txt'))
+print(text_files)
+
+# recursive globbing
+text_files = list(path.rglob('*.txt'))
+print(text_files)
+
