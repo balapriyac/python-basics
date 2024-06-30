@@ -1,7 +1,7 @@
 from pathlib import Path
 
 def organize_files_by_extension(path_to_dir):
-    path = Path(path_to_dir).expanduser().resolve()
+    path = Path(path_to_dir).resolve()
     print(f"Resolved path: {path}")
 
     if path.exists() and path.is_dir():
