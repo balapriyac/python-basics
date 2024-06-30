@@ -29,6 +29,21 @@ print(path.is_dir())
 for item in path.iterdir():
     print(item)
 
+# rename files
+path = Path('old_path')
+path.rename('new_path')
+
+# delete files
+path.unlink()   
+
+# delete empty directories
+path.rmdir()  
+
+# resolve paths
+relative_path = Path('new_project/README.md')
+absolute_path = relative_path.resolve()
+print(absolute_path)
+
 path = Path('/home/user/projectA')
 
 # simple globbing
