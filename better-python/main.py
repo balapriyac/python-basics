@@ -31,7 +31,6 @@ for row in read_large_csv_with_generator(file_path):
     print(row)
 
 # Caching
-
 from functools import cache
 from typing import Tuple
 import numpy as np
@@ -46,3 +45,13 @@ def assign_clusters(data: np.ndarray, centroids: np.ndarray) -> np.ndarray:
         distances = [euclidean_distance(tuple(point), tuple(centroid)) for centroid in centroids]
         clusters[i] = np.argmin(distances)
     return clusters
+
+# Context managers
+import sqlite3
+
+def query_db(db_path):
+    with sqlite3.connect(db_path) as conn:
+        cursor = conn.cursor()
+        cursor.execute(query)
+        for row in cursor.fetchall():
+            yield row
