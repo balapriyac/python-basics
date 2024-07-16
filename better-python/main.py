@@ -29,3 +29,20 @@ file_path = 'large_data.csv'
 
 for row in read_large_csv_with_generator(file_path):
     print(row)
+
+# Caching
+
+from functools import cache
+from typing import Tuple
+import numpy as np
+
+@cache
+def euclidean_distance(pt1: Tuple[float, float], pt2: Tuple[float, float]) -> float:
+    return np.sqrt((pt1[0] - pt2[0]) ** 2 + (pt1[1] - pt2[1]) ** 2)
+
+def assign_clusters(data: np.ndarray, centroids: np.ndarray) -> np.ndarray:
+    clusters = np.zeros(data.shape[0])
+    for i, point in enumerate(data):
+        distances = [euclidean_distance(tuple(point), tuple(centroid)) for centroid in centroids]
+        clusters[i] = np.argmin(distances)
+    return clusters
