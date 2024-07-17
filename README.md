@@ -1,7 +1,5 @@
 # Python Tutorials
 
-Code and Links to Tutorials for some of my Python tutorials:
-
 | Topic | Link to Code | Link to Tutorial|
 |-------|--------------|-----------------|
 |Convert Bytes to String in Python| [Code](https://github.com/balapriyac/python-basics/tree/main/bytes2str) | [Tutorial](https://www.kdnuggets.com/convert-bytes-to-string-in-python-a-tutorial-for-beginners)|
