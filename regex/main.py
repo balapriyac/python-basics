@@ -11,3 +11,17 @@ emails = re.findall(r'\b[\w.-]+?@\w+?\.\w+?\b', text)
 print(emails)
 
 # Output: ['support@example.com', 'sales@example.org']
+
+text = "Using     regular     expressions."
+cleaned_text = re.sub(r'\s+', ' ', text)
+print(cleaned_text) 
+
+# Output: Using regular expressions.
+
+email = "test@example.com"
+if re.match(r'^\b[\w.-]+?@\w+?\.\w+?\b$', email):
+    print("Valid email")  
+else:
+    print("Invalid email")
+
+# Output: Valid email
