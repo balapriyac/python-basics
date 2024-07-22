@@ -25,3 +25,26 @@ else:
     print("Invalid email")
 
 # Output: Valid email
+
+text = "This is sentence one. And this is sentence two! Is this sentence three?"
+sentences = re.split(r'[.!?]', text)
+print(sentences) 
+
+# Output: ['This is sentence one', ' And this is sentence two', ' Is this sentence three', '']
+
+# Using regex w/ pandas dataframes
+import pandas as pd
+
+data = {
+	'names': ['Alice123', 'Bob!@#', 'Charlie$$$'],
+	'emails': ['alice@example.com', 'bob_at_example.com', 'charlie@example.com']
+}
+df = pd.DataFrame(data)
+
+# Remove non-alphabetic characters from names
+df['names'] = df['names'].str.replace(r'[^a-zA-Z]', '', regex=True)
+
+# Validate email addresses
+df['valid_email'] = df['emails'].apply(lambda x: bool(re.match(r'^\b[\w.-]+?@\w+?\.\w+?\b$', x)))
+
+print(df)
