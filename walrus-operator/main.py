@@ -22,10 +22,11 @@ for sales, cost in sales_data:
     if profit > 50:
         profits.append(profit)
 
-# With Walrus Operator
-# Function to compute profit
-def compute_profit(sales, cost):
-	return sales - cost
+# list comp. version without walrus operator
+# Without Walrus Operator
+sales_data = [(100, 70), (200, 150), (150, 100), (300, 200)]
+profits = [compute_profit(sales, cost) for sales, cost in sales_data if compute_profit(sales, cost) > 50]
 
+# List comp. with Walrus Operator
 sales_data = [(100, 70), (200, 150), (150, 100), (300, 200)]
 profits = [profit for sales, cost in sales_data if (profit := compute_profit(sales, cost)) > 50]
