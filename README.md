@@ -13,7 +13,8 @@
 |Building Enumerations in Python |[Code](https://github.com/balapriyac/python-basics/tree/main/enums) | [Tutorial](https://www.kdnuggets.com/python-enum-how-to-build-enumerations-in-python)
 |What does `if __name__=='__main__'` do? | [Code](https://github.com/balapriyac/python-basics/tree/main/name-main-python) | [Tutorial](https://geekflare.com/python-if-name-main/)
 |Natural Sorting (Install `natsort` with pip) | [Code](https://github.com/balapriyac/python-basics/tree/main/natural-sorting) | [Tutorial](https://www.kdnuggets.com/exploring-natural-sorting-in-python)
-|Getting Started with Pydantic |[Code](https://github.com/balapriyac/python-basics/tree/main/pydantic-basics) | [Tutorial](https://www.kdnuggets.com/pydantic-tutorial-data-validation-in-python-made-simple)
+|Getting Started with Pydantic |[Code](https://github.com/balapriyac/python-basics/tree/main/pydantic-basics) | [Tutorial](https://www.kdnuggets.com/pydantic-tutorial-data-validation-in-python-made-simple)|
+|Walrus Operator|[Code](https://github.com/balapriyac/python-basics/tree/main/walrus-operator)|[Tutorial]()|
 
 
 
