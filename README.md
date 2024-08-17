@@ -18,7 +18,7 @@
 |Getting Started with Pydantic |[Code](https://github.com/balapriyac/python-basics/tree/main/pydantic-basics) | [Tutorial](https://www.kdnuggets.com/pydantic-tutorial-data-validation-in-python-made-simple)|
 |Pathlib Tutorial|[Code](https://github.com/balapriyac/python-basics/tree/main/pathlib-tutorial)|[Tutorial](https://www.kdnuggets.com/how-to-navigate-the-filesystem-with-pythons-pathlib)|
 |Pathlib File Management|[Code](https://github.com/balapriyac/python-basics/tree/main/pathlib-examples)|[Tutorial](https://www.kdnuggets.com/organize-search-and-back-up-files-with-pythons-pathlib)|
-|Walrus Operator|[Code](https://github.com/balapriyac/python-basics/tree/main/walrus-operator)|[Tutorial]()|
+|Walrus Operator|[Code](https://github.com/balapriyac/python-basics/tree/main/walrus-operator)|[Tutorial](https://www.kdnuggets.com/how-not-to-use-pythons-walrus-operator)|
 
 
 
