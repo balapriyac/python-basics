@@ -52,5 +52,25 @@ class Inventory:
         else:
             raise OutOfStockError(product['name'])
 
+# Testing the system
+inventory = Inventory()
 
+try:
+    inventory.purchase('P001', 1)  # Successful purchase
+    inventory.purchase('P002', 1)  # OutOfStockError
+except OutOfStockError as e:
+    print(f"Error: {e}")
+except InvalidProductIDError as e:
+    print(f"Error: {e}")
+except PurchaseLimitExceededError as e:
+    print(f"Error: {e}")
+
+try:
+    inventory.purchase('P001', 3)  # PurchaseLimitExceededError
+except OutOfStockError as e:
+    print(f"Error: {e}")
+except InvalidProductIDError as e:
+    print(f"Error: {e}")
+except PurchaseLimitExceededError as e:
+    print(f"Error: {e}")
 
