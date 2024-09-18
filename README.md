@@ -1,5 +1,7 @@
 # Python Tutorials
 
+If you're coming from one of my Python tutorials, you'll find the code here. This repo is quite useless otherwise. :)
+
 | Topic | Link to Code | Link to Tutorial|
 |-------|--------------|-----------------|
 |Python Tips|[Code](https://github.com/balapriyac/python-basics/tree/main/better-python)|[Tutorial](https://www.kdnuggets.com/5-python-tips-for-data-efficiency-and-speed)|
@@ -22,6 +24,6 @@
 |Pathlib File Management|[Code](https://github.com/balapriyac/python-basics/tree/main/pathlib-examples)|[Tutorial](https://www.kdnuggets.com/organize-search-and-back-up-files-with-pythons-pathlib)|
 |Walrus Operator|[Code](https://github.com/balapriyac/python-basics/tree/main/walrus-operator)|[Tutorial](https://www.kdnuggets.com/how-not-to-use-pythons-walrus-operator)|
 |Tracing Memory Allocation| [Code](https://github.com/balapriyac/python-basics/tree/main/tracemalloc-tutorial)|[Tutorial](https://www.kdnuggets.com/how-to-trace-memory-allocation-in-python)|
-|Merge Python Dicts|[Code](https://github.com/balapriyac/python-basics/blob/main/merge-dict/main.py)|[Tutorial]()|
+|Merge Python Dicts|[Code](https://github.com/balapriyac/python-basics/blob/main/merge-dict/main.py)|[Tutorial](https://www.kdnuggets.com/3-simple-ways-to-merge-python-dictionaries)|
 
 
