@@ -7,7 +7,8 @@ If you're coming from one of my Python tutorials, you'll find the code here. Thi
 |Python Tips|[Code](https://github.com/balapriyac/python-basics/tree/main/better-python)|[Tutorial](https://www.kdnuggets.com/5-python-tips-for-data-efficiency-and-speed)|
 |Convert Bytes to String in Python| [Code](https://github.com/balapriyac/python-basics/tree/main/bytes2str) | [Tutorial](https://www.kdnuggets.com/convert-bytes-to-string-in-python-a-tutorial-for-beginners)|
 |Regex for Data Cleaning| [Code](https://github.com/balapriyac/python-basics/tree/main/regex)|[Tutorial]()|
-|Caching| [Code](https://github.com/balapriyac/python-basics/tree/main/caching)| [Tutorial](https://www.kdnuggets.com/how-to-speed-up-python-code-with-caching)|
+|Caching in Python| [Code](https://github.com/balapriyac/python-basics/tree/main/caching)| [Tutorial](https://www.kdnuggets.com/how-to-speed-up-python-code-with-caching)|
+| Creating Custom Exceptions|[Code]()|[Tutorial]()|
 |Writing Better Python Functions|[Code](https://github.com/balapriyac/python-basics/tree/main/write-better-funcs)|[Tutorial](https://www.kdnuggets.com/5-tips-for-writing-better-python-functions)|
 |Emulating Switch-Case in Python|[Code](https://github.com/balapriyac/python-basics/tree/main/switch-case)|[Tutorial](https://geekflare.com/switch-case-in-python/)|
 |For-Else Loop Construct| [Code](https://github.com/balapriyac/python-basics/tree/main/for-else) | [Tutorial](https://www.freecodecamp.org/news/for-else-loop-in-python/)|
