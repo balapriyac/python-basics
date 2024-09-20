@@ -12,7 +12,7 @@
 |Caching in Python| [Code](https://github.com/balapriyac/python-basics/tree/main/caching)| [Tutorial](https://www.kdnuggets.com/how-to-speed-up-python-code-with-caching)|
 | Creating Custom Exceptions|[Code]()|[Tutorial]()|
 |Writing Better Python Functions|[Code](https://github.com/balapriyac/python-basics/tree/main/write-better-funcs)|[Tutorial](https://www.kdnuggets.com/5-tips-for-writing-better-python-functions)|
-| Partial Functions|[Code]()|[Tutorial]()|
+| Partial Functions|[Code](https://github.com/balapriyac/python-basics/tree/main/partial-functions)|[Tutorial](https://www.kdnuggets.com/partial-functions-in-python-a-guide-for-developers)|
 |Emulating Switch-Case in Python|[Code](https://github.com/balapriyac/python-basics/tree/main/switch-case)|[Tutorial](https://geekflare.com/switch-case-in-python/)|
 |For-Else Loop Construct| [Code](https://github.com/balapriyac/python-basics/tree/main/for-else) | [Tutorial](https://www.freecodecamp.org/news/for-else-loop-in-python/)|
 |SQLite Tutorial| [Code](https://github.com/balapriyac/python-basics/tree/main/sqlite-tut)|[Tutorial](https://www.kdnuggets.com/a-guide-to-working-with-sqlite-databases-in-python)|
