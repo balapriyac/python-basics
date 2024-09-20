@@ -1,20 +1,21 @@
 # Python Tutorials
 
-If you're coming from one of my Python tutorials, you'll find the code here. This repo is quite useless otherwise. :)
+> If you're coming from one of my Python tutorials, you'll find the code here. This repo is quite useless otherwise. :)
+> 
 ![fimg-python-tutorials](https://i.imgur.com/4KchgGD.png)
 
 | Topic | Link to Code | Link to Tutorial|
 |-------|--------------|-----------------|
 |Python Tips|[Code](https://github.com/balapriyac/python-basics/tree/main/better-python)|[Tutorial](https://www.kdnuggets.com/5-python-tips-for-data-efficiency-and-speed)|
 |Convert Bytes to String in Python| [Code](https://github.com/balapriyac/python-basics/tree/main/bytes2str) | [Tutorial](https://www.kdnuggets.com/convert-bytes-to-string-in-python-a-tutorial-for-beginners)|
-|Regex for Data Cleaning| [Code](https://github.com/balapriyac/python-basics/tree/main/regex)|[Tutorial]()|
+|RegEx for Data Cleaning| [Code](https://github.com/balapriyac/python-basics/tree/main/regex)|[Tutorial](https://www.kdnuggets.com/5-tips-for-using-regular-expressions-in-data-cleaning)|
 |Caching in Python| [Code](https://github.com/balapriyac/python-basics/tree/main/caching)| [Tutorial](https://www.kdnuggets.com/how-to-speed-up-python-code-with-caching)|
 | Creating Custom Exceptions|[Code]()|[Tutorial]()|
 |Writing Better Python Functions|[Code](https://github.com/balapriyac/python-basics/tree/main/write-better-funcs)|[Tutorial](https://www.kdnuggets.com/5-tips-for-writing-better-python-functions)|
 |Emulating Switch-Case in Python|[Code](https://github.com/balapriyac/python-basics/tree/main/switch-case)|[Tutorial](https://geekflare.com/switch-case-in-python/)|
 |For-Else Loop Construct| [Code](https://github.com/balapriyac/python-basics/tree/main/for-else) | [Tutorial](https://www.freecodecamp.org/news/for-else-loop-in-python/)|
-| SQLite Tutorial| [Code](https://github.com/balapriyac/python-basics/tree/main/sqlite-tut)|[Tutorial](https://www.kdnuggets.com/a-guide-to-working-with-sqlite-databases-in-python)|
-| Handling Key Errors|[Code](https://github.com/balapriyac/python-basics/tree/main/keyerrors) |[Tutorial](https://www.freecodecamp.org/news/how-to-handle-keyerror-exceptions-in-python/)|
+|SQLite Tutorial| [Code](https://github.com/balapriyac/python-basics/tree/main/sqlite-tut)|[Tutorial](https://www.kdnuggets.com/a-guide-to-working-with-sqlite-databases-in-python)|
+|Handling Key Errors|[Code](https://github.com/balapriyac/python-basics/tree/main/keyerrors) |[Tutorial](https://www.freecodecamp.org/news/how-to-handle-keyerror-exceptions-in-python/)|
 |Common Python Gotchas!| [Code](https://github.com/balapriyac/python-basics/tree/main/common-gotchas) | [Tutorial](https://www.kdnuggets.com/5-common-python-gotchas-and-how-to-avoid-them)|
 |Custom Context Managers in Python| [Code](https://github.com/balapriyac/python-basics/tree/main/custom_context_manager)|[Tutorial](https://www.kdnuggets.com/how-to-create-custom-context-managers-in-python)|
 |Convert Python Dict to JSON |[Code](https://github.com/balapriyac/python-basics/tree/main/dict-to-json) | [Tutorial](https://www.kdnuggets.com/convert-python-dict-to-json-a-tutorial-for-beginners)|
