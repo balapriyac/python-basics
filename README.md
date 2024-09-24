@@ -10,7 +10,7 @@
 |Convert Bytes to String in Python| [Code](https://github.com/balapriyac/python-basics/tree/main/bytes2str) | [Tutorial](https://www.kdnuggets.com/convert-bytes-to-string-in-python-a-tutorial-for-beginners)|
 |RegEx for Data Cleaning| [Code](https://github.com/balapriyac/python-basics/tree/main/regex)|[Tutorial](https://www.kdnuggets.com/5-tips-for-using-regular-expressions-in-data-cleaning)|
 |Caching in Python| [Code](https://github.com/balapriyac/python-basics/tree/main/caching)| [Tutorial](https://www.kdnuggets.com/how-to-speed-up-python-code-with-caching)|
-| Creating Custom Exceptions|[Code]()|[Tutorial]()|
+| Creating Custom Exceptions|[Code]()|[Tutorial](https://www.kdnuggets.com/how-and-why-to-create-custom-exceptions-in-python)|
 |Writing Better Python Functions|[Code](https://github.com/balapriyac/python-basics/tree/main/write-better-funcs)|[Tutorial](https://www.kdnuggets.com/5-tips-for-writing-better-python-functions)|
 | Partial Functions|[Code](https://github.com/balapriyac/python-basics/tree/main/partial-functions)|[Tutorial](https://www.kdnuggets.com/partial-functions-in-python-a-guide-for-developers)|
 |Emulating Switch-Case in Python|[Code](https://github.com/balapriyac/python-basics/tree/main/switch-case)|[Tutorial](https://geekflare.com/switch-case-in-python/)|
