@@ -22,3 +22,15 @@ list_5 = ["","",""]
 # any(a list of empty strings) returns False
 print(any(list_5))
 # Output False
+
+my_string = "coding**is**cool**345"
+are_there_digits = [char.isdigit() for char in my_string]
+print(any(are_there_digits))
+
+# Output True
+
+my_string = "***456278)))"
+num = [char.isalpha() for char in my_string]
+print(any(num))
+
+# Output False
