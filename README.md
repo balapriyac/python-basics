@@ -7,7 +7,7 @@
 | Topic | Link to Code | Link to Tutorial|
 |-------|--------------|-----------------|
 |Python Tips|[Code](https://github.com/balapriyac/python-basics/tree/main/better-python)|[Tutorial](https://www.kdnuggets.com/5-python-tips-for-data-efficiency-and-speed)|
-|`any()` and `all()` Functions | [Code]()|[Tutorial]()|
+|`any()` and `all()` Functions | [Code](https://github.com/balapriyac/python-basics/tree/main/any-all)|[Tutorial](https://www.freecodecamp.org/news/python-any-and-all-functions-explained-with-examples/)|
 |Convert Bytes to String in Python| [Code](https://github.com/balapriyac/python-basics/tree/main/bytes2str) | [Tutorial](https://www.kdnuggets.com/convert-bytes-to-string-in-python-a-tutorial-for-beginners)|
 |RegEx for Data Cleaning| [Code](https://github.com/balapriyac/python-basics/tree/main/regex)|[Tutorial](https://www.kdnuggets.com/5-tips-for-using-regular-expressions-in-data-cleaning)|
 | Data Cleaning One-Liners | [Code](https://github.com/balapriyac/python-basics/tree/main/data-cleaning) | [Tutorial](https://www.kdnuggets.com/10-useful-python-one-liners-for-data-cleaning)|
