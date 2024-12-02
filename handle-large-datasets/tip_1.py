@@ -1,4 +1,4 @@
-# useful tips and does not focus on a specific dataset
+# useful tips that do not focus on a specific dataset
 # We’ll use generic filenames like large_dataset.csv in the code examples
 
 # Use Generators Instead of Lists
@@ -8,3 +8,4 @@ def read_large_file(file_name):
         for line in file:
             yield line 
 
+ 
