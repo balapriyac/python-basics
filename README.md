@@ -33,5 +33,6 @@
 |Walrus Operator|[Code](https://github.com/balapriyac/python-basics/tree/main/walrus-operator)|[Tutorial](https://www.kdnuggets.com/how-not-to-use-pythons-walrus-operator)|
 |Tracing Memory Allocation| [Code](https://github.com/balapriyac/python-basics/tree/main/tracemalloc-tutorial)|[Tutorial](https://www.kdnuggets.com/how-to-trace-memory-allocation-in-python)|
 |Merge Python Dicts|[Code](https://github.com/balapriyac/python-basics/blob/main/merge-dict/main.py)|[Tutorial](https://www.kdnuggets.com/3-simple-ways-to-merge-python-dictionaries)|
+| Unit Testing w/ PyTest| [Code](https://github.com/balapriyac/python-basics/tree/main/pytest) | [Tutorial](https://www.kdnuggets.com/beginners-guide-unit-testing-python-code-pytest)|
 
 
