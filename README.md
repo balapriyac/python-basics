@@ -34,5 +34,6 @@
 |Tracing Memory Allocation| [Code](https://github.com/balapriyac/python-basics/tree/main/tracemalloc-tutorial)|[Tutorial](https://www.kdnuggets.com/how-to-trace-memory-allocation-in-python)|
 |Merge Python Dicts|[Code](https://github.com/balapriyac/python-basics/blob/main/merge-dict/main.py)|[Tutorial](https://www.kdnuggets.com/3-simple-ways-to-merge-python-dictionaries)|
 | Unit Testing w/ PyTest| [Code](https://github.com/balapriyac/python-basics/tree/main/pytest) | [Tutorial](https://www.kdnuggets.com/beginners-guide-unit-testing-python-code-pytest)|
+| String Manipulation One-Liners| [Code](https://github.com/balapriyac/python-basics/blob/main/string-manipulation/string_manipulation_one_liners.ipynb) | [Tutorial](https://www.kdnuggets.com/15-useful-python-one-liners-string-manipulation)|
 
 
