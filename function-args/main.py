@@ -36,6 +36,11 @@ print(sum2)
 def greet(name='there'):
     print(f"Hello {name}!")
 
+# Mutable Default Arguments - The Curious Case
+def append_to_list(elt,py_list=[]):
+    py_list.append(elt)
+    return py_list
+
 greet('Jane')
 
 greet() # Hello there!
