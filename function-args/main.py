@@ -31,3 +31,12 @@ print(sum1)
 
 sum2 = running_sum(num1=7,num2=20)
 print(sum2)
+
+# Using Default Values for Arguments
+def greet(name='there'):
+    print(f"Hello {name}!")
+
+greet('Jane')
+
+greet() # Hello there!
+
