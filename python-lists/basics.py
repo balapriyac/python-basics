@@ -24,5 +24,25 @@ print(max(shopping_list))
 print(min(shopping_list))
 # apples
 
+# list methods
+shopping_list.append('grapes')
+print(shopping_list)
+
+shopping_list.extend(['protein bars','cheese'])
+print(shopping_list)
+
+last_element = shopping_list.pop()
+print(shopping_list)
+print(last_element)
+
+not_needed = shopping_list.pop(2)
+print(not_needed)
+
+del shopping_list[1]
+print(shopping_list)
+
+shopping_list.sort()
+print(shopping_list)
+
 list_2 = shopping_list + ['noodles','almonds']
 print(list_2)
