@@ -6,7 +6,7 @@
 
 | Topic | Link to Code | Link to Tutorial|
 |-------|--------------|-----------------|
-|Python Tips|[Code](https://github.com/balapriyac/python-basics/tree/main/better-python)|[Tutorial](https://www.kdnuggets.com/5-python-tips-for-data-efficiency-and-speed)|
+|Python Tips (for Data Efficiency and Speed)|[Code](https://github.com/balapriyac/python-basics/tree/main/better-python)|[Tutorial](https://www.kdnuggets.com/5-python-tips-for-data-efficiency-and-speed)|
 |`any()` and `all()` Functions | [Code](https://github.com/balapriyac/python-basics/tree/main/any-all)|[Tutorial](https://www.freecodecamp.org/news/python-any-and-all-functions-explained-with-examples/)|
 | Python Lists 101 | [Code](https://github.com/balapriyac/python-basics/tree/main/python-lists) | [Tutorial](https://www.freecodecamp.org/news/lists-in-python-comprehensive-guide/)|
 |Convert Bytes to String in Python| [Code](https://github.com/balapriyac/python-basics/tree/main/bytes2str) | [Tutorial](https://www.kdnuggets.com/convert-bytes-to-string-in-python-a-tutorial-for-beginners)|
