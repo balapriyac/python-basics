@@ -19,3 +19,16 @@ class Version:
 
     def __repr__(self):
         return f"v{self.major}.{self.minor}.{self.patch}"
+
+# Usage
+versions = [
+    Version(2, 0, 0),
+    Version(1, 9, 5),
+    Version(1, 11, 0),
+    Version(2, 0, 1)
+]
+
+print(f"Sorted versions: {sorted(versions)}")
+print(f"v1.9.5 > v1.11.0: {Version(1, 9, 5) > Version(1, 11, 0)}")
+print(f"v2.0.0 >= v2.0.0: {Version(2, 0, 0) >= Version(2, 0, 0)}")
+print(f"v2.0.1 <= v2.0.0: {Version(2, 0, 1) <= Version(2, 0, 0)}")
