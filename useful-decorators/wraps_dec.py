@@ -13,3 +13,9 @@ def log_execution(func):
 def add(a, b):
     """Add two numbers and return the result."""
     return a + b
+
+# Without @wraps, help(add) would show wrapper's info
+help(add)  # Shows the original docstring
+print(f"Function name: {add.__name__}")  # Shows "add", not "wrapper"
+
+result = add(5, 3)
