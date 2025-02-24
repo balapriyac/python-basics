@@ -20,3 +20,15 @@ def _(obj: date):
 @format_output.register(list)
 def _(obj):
     return f"LIST: {', '.join(format_output(x) for x in obj)}"
+
+# Usage
+results = [
+    format_output("Hello"),
+    format_output(42),
+    format_output(-3.14159),
+    format_output(date(2025, 2, 21)),
+    format_output([1, 2.5, "three"])
+]
+
+for r in results:
+    print(r)
