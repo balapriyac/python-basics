@@ -143,3 +143,36 @@ def standardize_dates(df):
 pipeline = DataCleaningPipeline()
 pipeline.add_step('remove_duplicates', remove_duplicates)
 pipeline.add_step('standardize_dates', standardize_dates)
+
+# Automate String Cleaning and Standardization
+
+def clean_text_columns(df, columns=None):
+    """
+    Apply standardized text cleaning to specified columns.
+    
+    Args:
+        df (pd.DataFrame): Input dataframe
+        columns (list): List of columns to clean. If None, clean all object columns
+    
+    Returns:
+        pd.DataFrame: Dataframe with cleaned text columns
+    """
+    if columns is None:
+        columns = df.select_dtypes(include=['object']).columns
+        
+    df = df.copy()
+    
+    for column in columns:
+        if column not in df.columns:
+            continue
+            
+        # Apply string cleaning operations
+        df[column] = (df[column]
+                     .astype(str)
+                     .str.strip()
+                     .str.lower()
+                     .replace(r'\s+', ' ', regex=True)  # Replace multiple spaces
+                     .replace(r'[^\w\s]', '', regex=True))  # Remove special characters
+                     
+    return df
+
