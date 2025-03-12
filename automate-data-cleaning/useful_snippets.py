@@ -93,3 +93,53 @@ def validate_dataset(df, validation_rules=None):
         validation_results[column] = issues
     
     return validation_results
+
+# Create a Data Cleaning Pipeline
+
+class DataCleaningPipeline:
+    """
+    A modular pipeline for cleaning data with customizable steps.
+    """
+    
+    def __init__(self):
+        self.steps = []
+        
+    def add_step(self, name, function):
+        """Add a cleaning step."""
+        self.steps.append({'name': name, 'function': function})
+        
+    def execute(self, df):
+        """Execute all cleaning steps in order."""
+        results = []
+        current_df = df.copy()
+        
+        for step in self.steps:
+            try:
+                current_df = step['function'](current_df)
+                results.append({
+                    'step': step['name'],
+                    'status': 'success',
+                    'rows_affected': len(current_df)
+                })
+            except Exception as e:
+                results.append({
+                    'step': step['name'],
+                    'status': 'failed',
+                    'error': str(e)
+                })
+                break
+                
+        return current_df, results
+
+def remove_duplicates(df):
+    return df.drop_duplicates()
+
+def standardize_dates(df):
+    date_columns = df.select_dtypes(include=['datetime64']).columns
+    for col in date_columns:
+        df[col] = pd.to_datetime(df[col], errors='coerce')
+    return df
+
+pipeline = DataCleaningPipeline()
+pipeline.add_step('remove_duplicates', remove_duplicates)
+pipeline.add_step('standardize_dates', standardize_dates)
