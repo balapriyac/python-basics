@@ -41,5 +41,5 @@
 | Unit Testing w/ Pytest| [Code](https://github.com/balapriyac/python-basics/tree/main/pytest) | [Tutorial](https://www.kdnuggets.com/beginners-guide-unit-testing-python-code-pytest)|
 | String Manipulation One-Liners| [Code](https://github.com/balapriyac/python-basics/blob/main/string-manipulation/string_manipulation_one_liners.ipynb) | [Tutorial](https://www.kdnuggets.com/15-useful-python-one-liners-string-manipulation)|
 | Useful Decorators | [Code](https://github.com/balapriyac/python-basics/tree/main/useful-decorators) | [Tutorial](https://www.kdnuggets.com/7-powerful-python-decorators-to-level-up-your-coding-game)|
-
+| Timedelta (work w/ time intervals) | [Code](https://github.com/balapriyac/python-basics/tree/main/timedelta) | [Tutorial](https://www.freecodecamp.org/news/how-to-use-timedelta-objects-in-python/)|
 
