@@ -8,7 +8,8 @@
 |-------|--------------|-----------------|
 | Big O Complexity | [Code](https://github.com/balapriyac/python-basics/tree/main/big-o-examples)|[Tutorial](https://www.kdnuggets.com/big-o-complexity-cheat-sheet-coding-interviews)|
 |Python Tips (for Data Efficiency and Speed)|[Code](https://github.com/balapriyac/python-basics/tree/main/better-python)|[Tutorial](https://www.kdnuggets.com/5-python-tips-for-data-efficiency-and-speed)|
-| Automating Data Cleaning | [Code](https://github.com/balapriyac/python-basics/blob/main/automate-data-cleaning/useful_snippets.py) | [Tutorial](https://www.kdnuggets.com/creating-automated-data-cleaning-pipelines-using-python-and-pandas)|
+| Automated Data Cleaning Pipeline| [Code](https://github.com/balapriyac/python-basics/blob/main/automate-data-cleaning/useful_snippets.py) | [Tutorial](https://www.kdnuggets.com/creating-automated-data-cleaning-pipelines-using-python-and-pandas)|
+|Automate Data Cleaning in 5 Steps| [Code](https://github.com/balapriyac/python-basics/blob/main/automate-data-cleaning/automate_5_steps.py)|[Tutorial](https://www.kdnuggets.com/how-to-fully-automate-data-cleaning-with-python-in-5-steps)|
 |`any()` and `all()` Functions | [Code](https://github.com/balapriyac/python-basics/tree/main/any-all)|[Tutorial](https://www.freecodecamp.org/news/python-any-and-all-functions-explained-with-examples/)|
 | Python Lists 101 | [Code](https://github.com/balapriyac/python-basics/tree/main/python-lists) | [Tutorial](https://www.freecodecamp.org/news/lists-in-python-comprehensive-guide/)|
 |Convert Bytes to String in Python| [Code](https://github.com/balapriyac/python-basics/tree/main/bytes2str) | [Tutorial](https://www.kdnuggets.com/convert-bytes-to-string-in-python-a-tutorial-for-beginners)|
