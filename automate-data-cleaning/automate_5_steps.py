@@ -1,5 +1,7 @@
 import pandas as pd
 
+# Step 1: Run Basic Data Quality Checks
+
 def check_data_quality(df):
     # Store initial data quality metrics
     quality_report = {
@@ -10,6 +12,8 @@ def check_data_quality(df):
     }
     return quality_report
 
+# Step 2: Standardize Data Types
+ 
 def standardize_datatypes(df):
     for column in df.columns:
         # Try converting string dates to datetime
@@ -26,7 +30,9 @@ def standardize_datatypes(df):
                     pass
     return df
 
-from sklearn.impute import SimpleImputer
+# Step 3: Handle Missing Values
+
+ from sklearn.impute import SimpleImputer
 
 def handle_missing_values(df):
     # Handle numeric columns
@@ -42,6 +48,8 @@ def handle_missing_values(df):
         df[categorical_columns] = cat_imputer.fit_transform(df[categorical_columns])
     
     return df
+
+# Step 4: Detect and Handle Outliers
 
 def remove_outliers(df):
     numeric_columns = df.select_dtypes(include=['int64', 'float64']).columns
@@ -64,6 +72,8 @@ def remove_outliers(df):
             outliers_removed[column] = outliers
             
     return df, outliers_removed
+
+# Step 5: Validate the Results
 
 def validate_cleaning(df, original_shape, cleaning_report):
     validation_results = {
