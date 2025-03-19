@@ -1,4 +1,4 @@
-
+import pandas as pd
 
 def check_data_quality(df):
     # Store initial data quality metrics
@@ -76,3 +76,24 @@ def validate_cleaning(df, original_shape, cleaning_report):
     # Add validation results to the cleaning report
     cleaning_report['validation'] = validation_results
     return cleaning_report
+
+
+def automated_cleaning_pipeline(df):
+    # Store original shape for reporting
+    original_shape = df.shape
+    
+    # Initialize cleaning report
+    cleaning_report = {}
+    
+    # Execute each step and collect metrics
+    cleaning_report['initial_quality'] = check_data_quality(df)
+    
+    df = standardize_datatypes(df)
+    df = handle_missing_values(df)
+    df, outliers = remove_outliers(df)
+    cleaning_report['outliers_removed'] = outliers
+    
+    # Validate and finalize report
+    cleaning_report = validate_cleaning(df, original_shape, cleaning_report)
+    
+    return df, cleaning_report
