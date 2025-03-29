@@ -24,3 +24,35 @@ def grade_to_letter(score):
 print(f"Score 82 gets grade: {grade_to_letter(82)}")
 print(f"Score 75 gets grade: {grade_to_letter(75)}")
 
+# 2. itertools.pairwise
+
+
+from itertools import pairwise
+
+# Let's analyze temperature changes
+temperatures = [20, 23, 24, 25, 23, 22, 20]
+
+# Calculate temperature changes between consecutive readings
+changes = []
+for prev, curr in pairwise(temperatures):
+	change = curr - prev
+	changes.append(change)
+
+print("Temperature changes:", changes)
+
+
+# Calculate moving averages
+moving_averages = []
+for t1, t2 in pairwise(temperatures):
+	avg = (t1 + t2) / 2
+	moving_averages.append(avg)
+
+print("Moving averages:", moving_averages)
+
+# Finding the largest temperature jump
+max_jump = max(abs(b - a) for a, b in pairwise(temperatures))
+print(f"Largest temperature change: {max_jump} degrees")
+
+     
+
+
