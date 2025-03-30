@@ -100,5 +100,41 @@ print("Logs before first error:")
 for entry in normal_operation:
 	print(entry)
 
+# 5. operator.attrgettr  
+
+from operator import attrgetter
+from datetime import datetime
+
+# Let's create a simple class to demonstrate
+class Article:
+    def __init__(self, title, author, views, date):
+        self.title = title
+        self.author = author
+        self.stats = type('Stats', (), {'views': views})  # Nested attribute
+        self.date = date
+
+    def __repr__(self):
+        return f"{self.title} by {self.author}"
+
+# Create some sample articles
+articles = [
+	Article("Python Tips", "Alice", 1500, datetime(2025, 1, 15)),
+	Article("Data Science", "Bob", 2500, datetime(2025, 1, 20)),
+	Article("Web Dev", "Alice", 1800, datetime(2025, 1, 10))
+]
+
+# Sort articles by multiple criteria
+get_author_views = attrgetter('author', 'stats.views')
+
+# Sort by author and then by views
+sorted_articles = sorted(articles, key=get_author_views)
+for article in sorted_articles:
+	print(f"{article.author}: {article.title} ({article.stats.views} views)")
+
+# You can also use it to extract specific attributes
+dates = list(map(attrgetter('date'), articles))
+print("\nArticle dates:", dates)
+
      
+   
 
