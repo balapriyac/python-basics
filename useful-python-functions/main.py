@@ -158,7 +158,21 @@ flat_list = [item for sublist in sales_data for item in sublist]
 flat_iterator = chain.from_iterable(sales_data)
 
      
+# 7. itertools.product
+from itertools import product
 
+# Available options for a custom laptop
+processors = ['i5', 'i7', 'i9']
+ram = ['8GB', '16GB', '32GB']
+storage = ['256GB', '512GB', '1TB']
+
+# Generate all possible combinations
+configurations = list(product(processors, ram, storage))
+
+print("Possible laptop configurations:")
+for config in configurations:
+	print(f"Processor: {config[0]}, RAM: {config[1]}, Storage: {config[2]}")
+	
 
      
    
