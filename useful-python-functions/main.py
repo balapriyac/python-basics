@@ -135,6 +135,31 @@ for article in sorted_articles:
 dates = list(map(attrgetter('date'), articles))
 print("\nArticle dates:", dates)
 
+# 6. itertools.chain
+
+
+from itertools import chain
+
+# Let's say we're processing data from multiple sources
+sales_data = [
+	[('Jan', 100), ('Feb', 150)],
+	[('Mar', 200), ('Apr', 180)],
+	[('May', 210), ('Jun', 190)]
+]
+
+# Flatten the data efficiently
+flat_sales = list(chain.from_iterable(sales_data))
+print("Flattened sales data:", flat_sales)
+
+# List comprehension approach (creates intermediate list):
+flat_list = [item for sublist in sales_data for item in sublist]
+
+# chain.from_iterable approach (generates items one at a time):
+flat_iterator = chain.from_iterable(sales_data)
+
+     
+
+
      
    
 
