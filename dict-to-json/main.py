@@ -68,13 +68,13 @@ print(json_string)
 
 # Sort keys
 person = {
-    "name": "John Doe",
-    "age": 30,
-    "email": "john@example.com",
+    "name": "Bony Born",
+    "age": 23,
+    "email": "ezekielbon2@gmail.com",
     "address": {
-        "city": "New York",
-        "zipcode": "10001",
-        "street": "123 Main Street"
+        "city": "Nairobi",
+        "zipcode": "00100",
+        "street": "Biashara Main Street"
     }
 }
 
