@@ -63,3 +63,84 @@ def multiply(a, b):
     return a * b
 
 result = multiply(5, 4)
+
+import time
+import functools
+
+def timeit(func):
+    """Measure and print the execution time of a function."""
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+
+        print(f"{func.__name__} took {end_time - start_time:.4f} seconds to run")
+        return result
+
+    return wrapper
+
+@timeit
+def slow_function():
+    """A deliberately slow function for demonstration."""
+    total = 0
+    for i in range(10000000):
+        total += i
+    return total
+
+result = slow_function()  # Will print execution time
+
+@timeit
+def slow_function():
+    """A deliberately slow function for demonstration."""
+    total = 0
+    for i in range(10000000):
+        total += i
+    return total
+
+result = slow_function()  # Will print execution time
+
+def retry(max_attempts=3, delay_seconds=1, backoff_factor=2, exceptions=(Exception,)):
+    """Retry a function if it raises specified exceptions."""
+    def decorator(func):
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            attempts = 0
+            current_delay = delay_seconds
+
+            while attempts < max_attempts:
+                try:
+                    return func(*args, **kwargs)
+                except exceptions as e:
+                    attempts += 1
+                    if attempts == max_attempts:
+                        logging.error(f"Failed after {attempts} attempts. Last error: {e}")
+                        raise
+
+                    logging.warning(
+                        f"Attempt {attempts} failed with error: {e}. "
+                        f"Retrying in {current_delay} seconds..."
+                    )
+
+                    time.sleep(current_delay)
+                    current_delay *= backoff_factor
+
+        return wrapper
+    return decorator
+    
+import random
+import requests
+
+@retry(max_attempts=5, delay_seconds=1, exceptions=(requests.RequestException,))
+def fetch_data(url):
+    """Fetch data from an API with retry logic."""
+    response = requests.get(url, timeout=2)
+    response.raise_for_status()  # Raise exception for 4XX/5XX responses
+    return response.json()
+
+# This will retry up to 5 times if the request fails
+try:
+    data = fetch_data('https://api.example.com/data')
+    print("Successfully fetched data!")
+except Exception as e:
+    print(f"All retry attempts failed: {e}")
