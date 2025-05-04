@@ -144,3 +144,18 @@ try:
     print("Successfully fetched data!")
 except Exception as e:
     print(f"All retry attempts failed: {e}")
+
+def validate_positive_ints(func):
+    def wrapper(*args):
+        for arg in args:
+            if not isinstance(arg, int) or arg <= 0:
+                raise ValueError(f"{arg} must be a positive integer")
+        return func(*args)
+    return wrapper
+
+@validate_positive_ints
+def calculate_area(length, width):
+    return length * width
+
+print(calculate_area(5, 10))
+print(calculate_area(-1, 10))
