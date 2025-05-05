@@ -77,3 +77,49 @@ def log_calls(level: int = logging.DEBUG, logger: Optional[logging.Logger] = Non
         return decorator(func)
     
     return decorator
+    
+# Example: logging calls in data proc. pipeline
+import logging
+
+# Configure logging with a nice format
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+
+# Create a custom logger for our module
+logger = logging.getLogger('data_pipeline')
+
+
+@log_calls(logger=logger)
+def parse_customer_record(record):
+    """Extract customer information from a raw data record."""
+    # Extract and validate customer ID
+    customer_id = record.get('id')
+    
+    if not customer_id:
+        raise ValueError("Missing customer ID in record")
+        
+    # Transform the raw data into our standardized format
+    return {
+        'customer_id': customer_id,
+        'name': f"{record.get('first_name', '')} {record.get('last_name', '')}".strip(),
+        'email': record.get('email', '').lower(),
+        'signup_date': record.get('created_at')
+    }
+
+# Sample data - mix of valid and invalid records
+records = [
+    {'id': 101, 'first_name': 'Jane', 'last_name': 'Doe', 'email': 'JANE@example.com'},
+    # Record missing the ID field will cause an error
+    {'first_name': 'Alice', 'last_name': 'Johnson', 'email': 'alice@example.com'}
+]
+
+# Process each record
+for record in records:
+    try:
+        processed = parse_customer_record(record)
+        # Further processing would happen here
+    except Exception as e:
+        logger.error(f"Failed to process record: {record}")
+
