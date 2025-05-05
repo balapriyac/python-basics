@@ -21,7 +21,22 @@ def memoize(func: Callable) -> Callable:
     
     return wrapper
 
-# API calls
+# example: API calls
+import requests
+import time
+
+@memoize
+def fetch_user_data(user_id: int) -> dict:
+    """Fetch user data from an external API."""
+    print(f"Fetching data for user {user_id}...")
+    # Simulate API request delay
+    time.sleep(1)
+    
+    # This would be a real API call in production code
+    response = requests.get(f"https://api.example.com/users/{user_id}")
+    return response.json()
+
+# Logging
 import functools
 import logging
 from typing import Callable, Any, Optional
