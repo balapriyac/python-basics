@@ -167,3 +167,35 @@ def timer(func: Optional[Callable] = None, *, logger: Optional[logging.Logger] =
         return decorator
     else:
         return decorator(func)
+
+# Example: data proc. functions
+import logging
+import time
+
+# Set up a logger
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger('performance')
+
+# Create some sample data
+data = [i for i in range(1000000)]
+
+@timer(logger=logger)
+def calculate_statistics(numbers):
+    """Calculate basic statistics for a list of numbers."""
+    # Simulate some processing time
+    time.sleep(0.1)
+    
+    return {
+        'min': min(numbers),
+        'max': max(numbers),
+        'avg': sum(numbers) / len(numbers)
+    }
+
+@timer(logger=logger)
+def filter_outliers(numbers, threshold=2):
+    """Filter out values that are far from the mean."""
+    # Simulate more complex processing
+    time.sleep(0.2)
+    
+    mean = sum(numbers) / len(numbers)
+    return [n for n in numbers if abs(n - mean) < threshold]
