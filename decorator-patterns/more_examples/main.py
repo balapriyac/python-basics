@@ -123,3 +123,47 @@ for record in records:
     except Exception as e:
         logger.error(f"Failed to process record: {record}")
 
+# Timer
+import functools
+import time
+from typing import Callable, Optional
+import logging
+
+def timer(func: Optional[Callable] = None, *, logger: Optional[logging.Logger] = None, 
+          level: int = logging.INFO):
+    """
+    Measure and log the execution time of the decorated function.
+    
+    Args:
+        func: The function to decorate
+        logger: Logger to use (default: root logger)
+        level: Logging level for the timer messages
+    """
+    # Use the root logger if none provided
+    if logger is None:
+        logger = logging.getLogger()
+        
+    def decorator(func: Callable) -> Callable:
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            # Record the start time with high precision
+            start_time = time.perf_counter()
+            
+            # Call the original function
+            result = func(*args, **kwargs)
+            
+            # Calculate elapsed time
+            end_time = time.perf_counter()
+            elapsed_time = end_time - start_time
+            
+            # Log the execution time
+            logger.log(level, f"{func.__name__} took {elapsed_time:.6f} seconds to run")
+            
+            return result
+        return wrapper
+    
+    # Handle both @timer and @timer(logger=my_logger) syntax
+    if func is None:
+        return decorator
+    else:
+        return decorator(func)
