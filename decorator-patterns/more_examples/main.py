@@ -264,3 +264,19 @@ def retry(
         return wrapper
     
     return decorator
+
+# Example: API request resilience
+import logging
+import random
+
+# Set up logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger('api_client')
+
+class APIError(Exception):
+    """Base exception for API operations."""
+    pass
+    
+class ServiceUnavailableError(APIError):
+    """Raised when the service is temporarily unavailable."""
+    pass
