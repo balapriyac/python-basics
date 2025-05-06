@@ -1,4 +1,4 @@
-# memoization
+# Memoization
 import functools
 from typing import Callable, Dict, Any, Tuple
 
@@ -21,7 +21,7 @@ def memoize(func: Callable) -> Callable:
     
     return wrapper
 
-# example: API calls
+# Example: API calls
 import requests
 import time
 
@@ -199,3 +199,10 @@ def filter_outliers(numbers, threshold=2):
     
     mean = sum(numbers) / len(numbers)
     return [n for n in numbers if abs(n - mean) < threshold]
+
+# Process the data
+stats = calculate_statistics(data)
+filtered = filter_outliers(data)
+
+print(f"Stats: {stats}")
+print(f"Filtered data length: {len(filtered)}")
