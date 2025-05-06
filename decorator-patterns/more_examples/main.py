@@ -206,3 +206,61 @@ filtered = filter_outliers(data)
 
 print(f"Stats: {stats}")
 print(f"Filtered data length: {len(filtered)}")
+
+# Retry
+import functools
+import time
+import logging
+from typing import Callable, Optional, Type, Union, Tuple
+
+def retry(
+    exceptions: Union[Type[Exception], Tuple[Type[Exception], ...]] = Exception,
+    tries: int = 3,
+    delay: float = 1.0,
+    backoff: float = 2.0,
+    logger: Optional[logging.Logger] = None
+):
+    """
+    Retry a function if it raises specified exceptions.
+    
+    Args:
+        exceptions: The exception(s) to catch and retry on
+        tries: Maximum number of attempts
+        delay: Initial delay between retries in seconds
+        backoff: Multiplier applied to delay between retries (exponential backoff)
+        logger: Logger to use (default: root logger)
+    """
+    # Use root logger if not specified
+    if logger is None:
+        logger = logging.getLogger()
+        
+    def decorator(func: Callable) -> Callable:
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            # Make local copies of tries and delay that we can modify
+            remaining_tries, current_delay = tries, delay
+            
+            # Keep trying until we're out of attempts
+            while remaining_tries > 1:
+                try:
+                    # Attempt to call the function
+                    return func(*args, **kwargs)
+                except exceptions as e:
+                    # If it fails with a matching exception, log and retry
+                    msg = (f"{func.__name__}: {str(e)}, retrying in {current_delay} seconds... "
+                           f"({remaining_tries-1} tries left)")
+                    logger.warning(msg)
+                    
+                    # Wait before retrying
+                    time.sleep(current_delay)
+                    
+                    # Decrement tries and increase delay for next attempt
+                    remaining_tries -= 1
+                    current_delay *= backoff  # Exponential backoff
+                    
+            # Last attempt - no more retries after this
+            return func(*args, **kwargs)
+        
+        return wrapper
+    
+    return decorator
