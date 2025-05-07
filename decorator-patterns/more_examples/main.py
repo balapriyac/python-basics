@@ -333,3 +333,39 @@ try:
     print(f"Current temperature: {temp}°C")
 except APIError as e:
     logger.error(f"Failed to get weather data after multiple attempts: {e}")
+
+import functools
+import inspect
+from typing import Callable, Any, Optional
+
+def validate_args(**validators: Callable):
+    """
+    Validate function arguments using the provided validator functions.
+    
+    Args:
+        **validators: Mapping of parameter names to validation functions
+    """
+    def decorator(func: Callable) -> Callable:
+        # Get function signature to access parameter information
+        sig = inspect.signature(func)
+        
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            # Bind the provided arguments to parameter names
+            bound_values = sig.bind(*args, **kwargs)
+            # Apply default values for missing parameters
+            bound_values.apply_defaults()
+            
+            # Run validators for each parameter that has one
+            for param_name, validator in validators.items():
+                if param_name in bound_values.arguments:
+                    value = bound_values.arguments[param_name]
+                    # Run the validator function
+                    validator(value, param_name)
+            
+            # If validation passes, call the original function
+            return func(*args, **kwargs)
+        
+        return wrapper
+    
+    return decorator
