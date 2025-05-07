@@ -369,3 +369,94 @@ def validate_args(**validators: Callable):
         return wrapper
     
     return decorator
+
+import re
+
+def password_strength(value: str, param_name: str) -> bool:
+    """Check if a password meets strength requirements."""
+    if not isinstance(value, str):
+        raise TypeError(f"{param_name} must be a string")
+        
+    if len(value) < 8:
+        raise ValueError(f"{param_name} must be at least 8 characters long")
+        
+    if not re.search(r'[A-Z]', value):
+        raise ValueError(f"{param_name} must contain at least one uppercase letter")
+        
+    if not re.search(r'[a-z]', value):
+        raise ValueError(f"{param_name} must contain at least one lowercase letter")
+        
+    if not re.search(r'[0-9]', value):
+        raise ValueError(f"{param_name} must contain at least one digit")
+        
+    return True
+
+class UserService:
+    def __init__(self, database):
+        self.db = database
+    
+    @validate_args(
+        email=is_email,
+        username=has_length(min_length=3, max_length=30),
+        password=password_strength,
+        age=is_positive
+    )
+    def register_user(self, email: str, username: str, password: str, age: int) -> dict:
+        """
+        Register a new user with validated input.
+        
+        Args:
+            email: User's email address
+            username: Desired username
+            password: User's password (will be hashed)
+            age: User's age in years
+            
+        Returns:
+            User data dictionary
+        """
+        # In a real implementation, you would hash the password and store the user
+        user_data = {
+            "email": email,
+            "username": username,
+            "age": age,
+            # Password would be hashed first
+        }
+        
+        # Store in database
+        user_id = self.db.insert_user(user_data)
+        user_data["id"] = user_id
+        
+        return user_data
+
+# Usage example
+class MockDatabase:
+    def insert_user(self, user_data):
+        # Simulate database insertion
+        print(f"Inserting user: {user_data}")
+        return 12345  # Simulated user ID
+
+user_service = UserService(MockDatabase())
+
+try:
+    # Valid user registration
+    user = user_service.register_user(
+        email="jane.doe@example.com",
+        username="janedoe",
+        password="P@ssw0rd123",
+        age=28
+    )
+    print(f"User registered successfully: {user}")
+    
+except ValueError as e:
+    print(f"Registration failed: {e}")
+
+try:
+    # Invalid registration - weak password
+    user_service.register_user(
+        email="john.smith@example.com",
+        username="johnsmith",
+        password="password",  # Too weak
+        age=32
+    )
+except ValueError as e:
+    print(f"Registration failed: {e}")
