@@ -280,3 +280,56 @@ class APIError(Exception):
 class ServiceUnavailableError(APIError):
     """Raised when the service is temporarily unavailable."""
     pass
+
+import requests
+
+class WeatherAPI:
+    """Simple weather API client with retry capability."""
+    
+    def __init__(self, api_key):
+        self.api_key = api_key
+        self.base_url = "https://api.weatherservice.com/v1"
+        
+    @retry(
+        exceptions=(ServiceUnavailableError, requests.ConnectionError, requests.Timeout),
+        tries=3,
+        delay=1.0,
+        backoff=2.0,
+        logger=logger
+    )
+    def get_current_temperature(self, city: str) -> float:
+        """
+        Get the current temperature for a city.
+        
+        Args:
+            city: City name to get weather for
+            
+        Returns:
+            Temperature in Celsius
+        """
+        # For demonstration purposes, simulate occasional failures
+        if random.random() < 0.5:  # 50% chance of failure on first try
+            raise ServiceUnavailableError("Weather service temporarily unavailable")
+        
+        # In a real application, this would be an actual API call:
+        # response = requests.get(
+        #     f"{self.base_url}/weather",
+        #     params={"city": city, "api_key": self.api_key}
+        # )
+        # if response.status_code == 503:
+        #     raise ServiceUnavailableError("Service unavailable")
+        # return response.json()["temperature"]
+        
+        # For this example, return a simulated temperature
+        logger.info(f"Successfully retrieved temperature for {city}")
+        return 22.5  # Simulated temperature in Celsius
+
+# Create an API client
+weather_api = WeatherAPI("fake_api_key")
+
+try:
+    # Get current temperature
+    temp = weather_api.get_current_temperature("San Francisco")
+    print(f"Current temperature: {temp}°C")
+except APIError as e:
+    logger.error(f"Failed to get weather data after multiple attempts: {e}")
