@@ -14,3 +14,22 @@ def process_sales_data(sales):
 # do this
 def process_sales_data(sales):
     return max(sales), sum(sales), sum(sales) / len(sales)
+
+# Instead of this
+def get_premium_customer_emails(customers):
+    premium_emails = []
+    for customer in customers:
+        if customer['membership_level'] == 'premium' and customer['active']:
+            email = customer['email'].lower().strip()
+            premium_emails.append(email)
+    return premium_emails
+
+# Do this
+def get_premium_customer_emails(customers):
+    return [
+        customer['email'].lower().strip()
+        for customer in customers
+        if customer['membership_level'] == 'premium' and customer['active']
+    ]
+
+
