@@ -32,4 +32,27 @@ def get_premium_customer_emails(customers):
         if customer['membership_level'] == 'premium' and customer['active']
     ]
 
+# Instead of this
+def has_permission(user_id, permitted_users):
+    # permitted_users is a list of user IDs
+    for p_user in permitted_users:
+        if p_user == user_id:
+            return True
+    return False
+
+# Usage:
+permitted_users = [1001, 1023, 1052, 1076, 1088, 1095, 1102, 1109]
+print(has_permission(1088, permitted_users))  # True
+
+# Do this
+def has_permission(user_id, permitted_users):
+    # permitted_users is now a set of user IDs
+    return user_id in permitted_users
+
+# Usage:
+permitted_users = {1001, 1023, 1052, 1076, 1088, 1095, 1102, 1109}
+print(has_permission(1088, permitted_users))  # True
+
+
+
 
