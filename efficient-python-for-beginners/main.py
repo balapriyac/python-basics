@@ -80,7 +80,7 @@ def find_errors(log_file):
 for timestamp, message in find_errors('application.log'):
     print(f"Error at {timestamp}: {message}")
 
-
+# Instead of this
 import re
 from datetime import datetime
 
@@ -104,6 +104,7 @@ def find_recent_errors(logs):
     
     return recent_errors
 
+# do this
 import re
 from datetime import datetime
 
@@ -127,3 +128,26 @@ def find_recent_errors(logs):
                 recent_errors.append(log)
     
     return recent_errors
+    
+# instead of this
+def generate_html_report(data_points):
+    html = "<html><body><h1>Data Report</h1><ul>"
+    
+    for point in data_points:
+        # This creates a new string object on each iteration
+        html += f"<li>{point['name']}: {point['value']} ({point['timestamp']})</li>"
+    
+    html += "</ul></body></html>"
+    return html
+
+# do this
+def generate_html_report(data_points):
+    parts = ["<html><body><h1>Data Report</h1><ul>"]
+    
+    for point in data_points:
+        parts.append(f"<li>{point['name']}: {point['value']} ({point['timestamp']})</li>")
+    
+    parts.append("</ul></body></html>")
+    return "".join(parts)
+    
+
