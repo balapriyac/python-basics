@@ -53,6 +53,32 @@ def has_permission(user_id, permitted_users):
 permitted_users = {1001, 1023, 1052, 1076, 1088, 1095, 1102, 1109}
 print(has_permission(1088, permitted_users))  # True
 
+# Instead of this
+def find_errors(log_file):
+    with open(log_file, 'r') as file:
+        lines = file.readlines()
+    
+    error_messages = []
+    for line in lines:
+        if '[ERROR]' in line:
+            timestamp = line.split('[ERROR]')[0].strip()
+            message = line.split('[ERROR]')[1].strip()
+            error_messages.append((timestamp, message))
+    
+    return error_messages
+    
+# Do this
+def find_errors(log_file):
+    with open(log_file, 'r') as file:
+        for line in file:
+            if '[ERROR]' in line:
+                timestamp = line.split('[ERROR]')[0].strip()
+                message = line.split('[ERROR]')[1].strip()
+                yield (timestamp, message)
+
+# Usage:
+for timestamp, message in find_errors('application.log'):
+    print(f"Error at {timestamp}: {message}")
 
 
 
