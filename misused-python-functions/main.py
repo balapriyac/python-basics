@@ -21,3 +21,19 @@ def generate_leaderboard(players):
         leaderboard.append(f"{rank}. {player['name']}: {player['score']} pts")
     return leaderboard
 
+# instead of this
+
+# use it like this
+
+# instead of this
+# use it like this
+
+# instead of this
+
+# use it like this
+# instead of this
+# use it like this
+# instead of this
+# use it like this
+# instead of this
+# use it like this
