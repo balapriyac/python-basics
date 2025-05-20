@@ -7,7 +7,7 @@
 | Topic | Link to Code | Link to Tutorial|
 |-------|--------------|-----------------|
 | Python Data Structures| [Code](https://github.com/balapriyac/python-basics/tree/main/data-structures) | [Tutorial](https://www.kdnuggets.com/python-data-structures-every-programmer-should-know)|
-|Misused Python Functions | [Code]() | [Tutorial]()|
+|Commonly Misused Python Functions | [Code](https://github.com/balapriyac/python-basics/tree/main/misused-python-functions) | [Tutorial](https://www.kdnuggets.com/7-python-functions-youre-probably-misusing-and-dont-realize-it)|
 | Intro to Golang | [Code](https://github.com/balapriyac/python-basics/tree/main/go-intro) | [Tutorial](https://www.kdnuggets.com/a-gentle-introduction-to-go-for-python-programmers)|
 | Big O Complexity | [Code](https://github.com/balapriyac/python-basics/tree/main/big-o-examples)|[Tutorial](https://www.kdnuggets.com/big-o-complexity-cheat-sheet-coding-interviews)|
 |Python Tips (for Data Efficiency and Speed)|[Code](https://github.com/balapriyac/python-basics/tree/main/better-python)|[Tutorial](https://www.kdnuggets.com/5-python-tips-for-data-efficiency-and-speed)|
