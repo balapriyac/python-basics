@@ -22,3 +22,35 @@ def process_user(user: User):
         send_email(user.email)
         log_activity(f"Processed {user.full_name}")
 
+
+def process_order(order, status):
+    if status == 'pending':
+        # process logic
+    elif status == 'shipped':
+        # different logic
+    elif status == 'delivered':
+        # more logic
+    else:
+        raise ValueError(f"Invalid status: {status}")
+        
+# Later in your code...
+process_order(order, 'shiped')  # Typo! But no IDE warning
+
+from enum import Enum, auto
+
+class OrderStatus(Enum):
+    PENDING = 'pending'
+    SHIPPED = 'shipped'
+    DELIVERED = 'delivered'
+    
+def process_order(order, status: OrderStatus):
+    if status == OrderStatus.PENDING:
+        # process logic
+    elif status == OrderStatus.SHIPPED:
+        # different logic
+    elif status == OrderStatus.DELIVERED:
+        # more logic
+    
+# Later in your code...
+process_order(order, OrderStatus.SHIPPED)  # IDE autocomplete helps!
+
