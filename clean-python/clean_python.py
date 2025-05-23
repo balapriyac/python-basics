@@ -66,3 +66,31 @@ def create_user(name, email, *, admin=False, notify=True, temporary=False):
 # Now you must use keywords for optional args
 create_user("John Smith", "john@example.com", admin=True, notify=False)
 
+import os
+
+data_dir = os.path.join('data', 'processed')
+if not os.path.exists(data_dir):
+    os.makedirs(data_dir)
+
+filepath = os.path.join(data_dir, 'output.csv')
+with open(filepath, 'w') as f:
+    f.write('results\n')
+    
+# Check if we have a JSON file with the same name
+json_path = os.path.splitext(filepath)[0] + '.json'
+if os.path.exists(json_path):
+    with open(json_path) as f:
+        data = json.load(f)
+
+from pathlib import Path
+
+data_dir = Path('data') / 'processed'
+data_dir.mkdir(parents=True, exist_ok=True)
+
+filepath = data_dir / 'output.csv'
+filepath.write_text('results\n')
+
+# Check if we have a JSON file with the same name
+json_path = filepath.with_suffix('.json')
+if json_path.exists():
+    data = json.loads(json_path.read_text())
