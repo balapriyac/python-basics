@@ -54,3 +54,15 @@ def process_order(order, status: OrderStatus):
 # Later in your code...
 process_order(order, OrderStatus.SHIPPED)  # IDE autocomplete helps!
 
+def create_user(name, email, admin=False, notify=True, temporary=False):
+    # Implementation
+    
+# Later in code...
+create_user("John Smith", "john@example.com", True, False)
+
+def create_user(name, email, *, admin=False, notify=True, temporary=False):
+    # Implementation
+
+# Now you must use keywords for optional args
+create_user("John Smith", "john@example.com", admin=True, notify=False)
+
