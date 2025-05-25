@@ -94,3 +94,52 @@ filepath.write_text('results\n')
 json_path = filepath.with_suffix('.json')
 if json_path.exists():
     data = json.loads(json_path.read_text())
+
+def process_payment(order, user):
+    if order.is_valid:
+        if user.has_payment_method:
+            payment_method = user.get_payment_method()
+            if payment_method.has_sufficient_funds(order.total):
+                try:
+                    payment_method.charge(order.total)
+                    order.mark_as_paid()
+                    send_receipt(user, order)
+                    return True
+                except PaymentError as e:
+                    log_error(e)
+                    return False
+            else:
+                log_error("Insufficient funds")
+                return False
+        else:
+            log_error("No payment method")
+            return False
+    else:
+        log_error("Invalid order")
+        return False
+
+def process_payment(order, user):
+    # Guard clauses: check preconditions first
+    if not order.is_valid:
+        log_error("Invalid order")
+        return False
+        
+    if not user.has_payment_method:
+        log_error("No payment method")
+        return False
+    
+    payment_method = user.get_payment_method()
+    if not payment_method.has_sufficient_funds(order.total):
+        log_error("Insufficient funds")
+        return False
+    
+    # Main logic comes after all validations
+    try:
+        payment_method.charge(order.total)
+        order.mark_as_paid()
+        send_receipt(user, order)
+        return True
+    except PaymentError as e:
+        log_error(e)
+        return False
+
