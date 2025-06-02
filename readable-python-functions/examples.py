@@ -22,3 +22,24 @@ def send_notification(user, notification_config, message_content):
     - message_content: MessageContent with subject, body, and attachments
     """
     # code goes here...
+
+# Bad example
+def validate_email(email):
+    """This function validates email."""
+    # code goes here...
+
+# Good example
+def validate_email(email: str) -> bool:
+    """
+    Check if an email address has valid format.
+    
+    Parameters:
+    - email: String containing the email address to validate
+    
+    Returns:
+    - True if the email is valid, else False
+    
+    Note:
+    - This validation checks format only, not if the address actually exists
+    """
+    # code goes here...
