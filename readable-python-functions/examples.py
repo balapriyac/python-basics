@@ -42,23 +42,7 @@ def process_order(order):
         update_order_analytics(validated_order)
     return OrderResult(validated_order, payment_result)
 
-# Bad example
-def calculate_final_price(price, discount):
-    return price * (1 - discount / 100)
 
-# Good example
-def calculate_final_price(price: float, discount_percentage: float) -> float:
-    """
-    Calculate final price after applying the discount.
-    
-    Parameters:
-    - price: Original price of the item
-    - discount_percentage: Percentage discount to apply (0-100)
-    
-    Returns:
-    - Discounted price
-    """
-    return price * (1 - discount_percentage / 100)
 # Bad example
 def validate_email(email):
     """This function validates email."""
@@ -79,3 +63,54 @@ def validate_email(email: str) -> bool:
     - This validation checks format only, not if the address actually exists
     """
     # code goes here...
+
+
+# Bad example
+def calculate_final_price(price, discount):
+    return price * (1 - discount / 100)
+
+# Good example
+def calculate_final_price(price: float, discount_percentage: float) -> float:
+    """
+    Calculate final price after applying the discount.
+    
+    Parameters:
+    - price: Original price of the item
+    - discount_percentage: Percentage discount to apply (0-100)
+    
+    Returns:
+    - Discounted price
+    """
+    return price * (1 - discount_percentage / 100)
+
+# Bad example
+def create_report(data, include_charts=True, format='pdf', output_path='report.pdf'):
+    # code goes here...
+
+# Good example
+def create_report(
+    data: List[Dict[str, Any]],
+    *,  # Force keyword arguments for clarity
+    include_charts: bool = True,
+    format_type: Literal['pdf', 'html', 'xlsx'] = 'pdf',
+    output_path: Optional[str] = None
+) -> str:
+    """
+    Generate a report from the provided data.
+    
+    Parameters:
+    - data: List of records to include in the report
+    - include_charts: Whether to generate charts from the data
+    - format_type: Output format of the report
+    - output_path: Where to save the report (if None, uses a default location)
+    
+    Returns:
+    - Path to the generated report
+    """
+    if output_path is None:
+        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+        output_path = f"reports/report_{timestamp}.{format_type}"
+    
+    # code goes here...
+    
+    return output_path
