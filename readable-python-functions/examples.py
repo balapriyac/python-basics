@@ -24,6 +24,42 @@ def send_notification(user, notification_config, message_content):
     # code goes here...
 
 # Bad example
+def process_order(order):
+    # Validate order
+    # Update inventory
+    # Charge customer
+    # Send confirmation email
+    # Update analytics
+
+# Good example
+def process_order(order):
+    """Process a customer order from validation through confirmation."""
+    validated_order = validate_order(order)
+    update_inventory(validated_order)
+    payment_result = charge_customer(validated_order)
+    if payment_result.is_successful:
+        send_confirmation_email(validated_order, payment_result)
+        update_order_analytics(validated_order)
+    return OrderResult(validated_order, payment_result)
+
+# Bad example
+def calculate_final_price(price, discount):
+    return price * (1 - discount / 100)
+
+# Good example
+def calculate_final_price(price: float, discount_percentage: float) -> float:
+    """
+    Calculate final price after applying the discount.
+    
+    Parameters:
+    - price: Original price of the item
+    - discount_percentage: Percentage discount to apply (0-100)
+    
+    Returns:
+    - Discounted price
+    """
+    return price * (1 - discount_percentage / 100)
+# Bad example
 def validate_email(email):
     """This function validates email."""
     # code goes here...
