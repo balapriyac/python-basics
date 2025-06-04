@@ -114,3 +114,45 @@ def create_report(
     # code goes here...
     
     return output_path
+
+# Bad example
+def process_payment(payment):
+    if payment.is_valid:
+        if payment.amount > 0:
+            if not payment.is_duplicate:
+                # Actual payment processing logic (buried in conditionals)
+                return success_result
+            else:
+                return DuplicatePaymentError()
+        else:
+            return InvalidAmountError()
+    else:
+        return InvalidPaymentError()
+
+# Goood example
+def process_payment(payment: Payment) -> PaymentResult:
+    """
+    Process a payment transaction.
+    
+    Returns a PaymentResult or raises appropriate exceptions.
+    """
+    # Guard clauses for validation
+    if not payment.is_valid:
+        raise InvalidPaymentError("Payment validation failed")
+        
+    if payment.amount <= 0:
+        raise InvalidAmountError(f"Invalid payment amount: {payment.amount}")
+        
+    if payment.is_duplicate:
+        raise DuplicatePaymentError(f"Duplicate payment ID: {payment.id}")
+    
+    # Main logic - now at the top level with no nesting
+    transaction_id = submit_to_payment_processor(payment)
+    update_payment_records(payment, transaction_id)
+    notify_payment_success(payment)
+    
+    return PaymentResult(
+        success=True,
+        transaction_id=transaction_id,
+        processed_at=datetime.now()
+    )
