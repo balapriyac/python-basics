@@ -6,6 +6,7 @@
 
 | Topic | Link to Code | Link to Tutorial|
 |-------|--------------|-----------------|
+| Writing Readable Python Functions|[Code](https://github.com/balapriyac/python-basics/tree/main/readable-python-functions)|[Tutorial](https://www.kdnuggets.com/the-art-of-writing-readable-python-functions)|
 | Efficient Python (for Beginners) | [Code](https://github.com/balapriyac/python-basics/blob/main/efficient-python-for-beginners/main.py) | [Tutorial](https://www.kdnuggets.com/how-to-write-efficient-python-code-even-if-youre-a-beginner)|
 | Python Data Structures| [Code](https://github.com/balapriyac/python-basics/tree/main/data-structures) | [Tutorial](https://www.kdnuggets.com/python-data-structures-every-programmer-should-know)|
 |Commonly Misused Python Functions | [Code](https://github.com/balapriyac/python-basics/tree/main/misused-python-functions) | [Tutorial](https://www.kdnuggets.com/7-python-functions-youre-probably-misusing-and-dont-realize-it)|
