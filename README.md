@@ -6,6 +6,7 @@
 
 | Topic | Link to Code | Link to Tutorial|
 |-------|--------------|-----------------|
+| Clean Python Crash Course | [Code](https://github.com/balapriyac/python-basics/tree/main/clean-python)|[Tutorial](https://www.kdnuggets.com/stop-writing-messy-python-a-clean-code-crash-course)|
 | Writing Readable Python Functions|[Code](https://github.com/balapriyac/python-basics/tree/main/readable-python-functions)|[Tutorial](https://www.kdnuggets.com/the-art-of-writing-readable-python-functions)|
 | Efficient Python (for Beginners) | [Code](https://github.com/balapriyac/python-basics/blob/main/efficient-python-for-beginners/main.py) | [Tutorial](https://www.kdnuggets.com/how-to-write-efficient-python-code-even-if-youre-a-beginner)|
 | Python Data Structures| [Code](https://github.com/balapriyac/python-basics/tree/main/data-structures) | [Tutorial](https://www.kdnuggets.com/python-data-structures-every-programmer-should-know)|
