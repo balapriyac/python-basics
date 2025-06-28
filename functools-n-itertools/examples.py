@@ -18,6 +18,14 @@ all_lines = chain.from_iterable(open(f) for f in error_logs)
 error_count = sum(1 for line in all_lines if 'ERROR' in line)
 
 
+from itertools import combinations
+
+features = ['cache', 'compression', 'cdn']
+
+# Test all pairs of features
+for combo in combinations(features, 2):
+    performance = test_feature_combo(combo)
+    print(f"{combo}: {performance}ms")
 
 
 from functools import reduce
