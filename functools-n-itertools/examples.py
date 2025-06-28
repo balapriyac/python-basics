@@ -1,3 +1,4 @@
+# ex 1
 from functools import lru_cache
 
 @lru_cache(maxsize=128)
@@ -9,6 +10,7 @@ def fetch_user_data(user_id):
 user = fetch_user_data(123)  # Database call
 user = fetch_user_data(123)  # Returns cached result
 
+# ex 2
 from itertools import chain
 
 # Process multiple log files as one stream
@@ -17,7 +19,22 @@ all_lines = chain.from_iterable(open(f) for f in error_logs)
 
 error_count = sum(1 for line in all_lines if 'ERROR' in line)
 
+# ex 3
+from functools import partial
+import logging
 
+def log_event(level, component, message):
+    logging.log(level, f"[{component}] {message}")
+
+# Create specialized loggers
+auth_error = partial(log_event, logging.ERROR, 'AUTH')
+db_info = partial(log_event, logging.INFO, 'DATABASE')
+
+# Clean usage
+auth_error("Login failed for user")
+db_info("Connection established")
+
+# ex 4
 from itertools import combinations
 
 features = ['cache', 'compression', 'cdn']
