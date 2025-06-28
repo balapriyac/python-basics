@@ -44,6 +44,40 @@ for combo in combinations(features, 2):
     performance = test_feature_combo(combo)
     print(f"{combo}: {performance}ms")
 
+# ex 5
+from functools import singledispatch
+from datetime import datetime
+
+@singledispatch
+def format_data(value):
+    return str(value)  # Default
+
+@format_data.register(datetime)
+def _(value):
+    return value.strftime("%Y-%m-%d")
+
+@format_data.register(list)
+def _(value):
+    return ", ".join(str(item) for item in value)
+
+# Automatically picks the right formatter
+print(format_data(datetime.now()))  # "2025-06-27"
+print(format_data([1, 2, 3]))       # "1, 2, 3"
+
+# ex 6
+from itertools import groupby
+
+transactions = [
+    {'type': 'credit', 'amount': 100},
+    {'type': 'credit', 'amount': 50},
+    {'type': 'debit', 'amount': 75},
+    {'type': 'debit', 'amount': 25}
+]
+
+# Group by transaction type
+for trans_type, group in groupby(transactions, key=lambda x: x['type']):
+    total = sum(item['amount'] for item in group)
+    print(f"{trans_type}: ${total}")
 
 from functools import reduce
 
