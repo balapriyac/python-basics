@@ -25,3 +25,21 @@ comprehension_time = time.time() - start_time
 print(f"Comprehension time: {comprehension_time:.4f} seconds")
 print(f"Improvement: {loop_time / comprehension_time:.2f}x faster")
 
+# before
+def find_common_elements_list(list1, list2):
+    common = []
+    for item in list1:  # Go through each item in the first list
+        if item in list2:  # Check if it exists in the second list
+            common.append(item)  # If yes, add it to our common list
+    return common
+
+# Test with reasonably large lists
+large_list1 = list(range(10000))
+large_list2 = list(range(5000, 15000))
+
+start_time = time.time()
+common_list = find_common_elements_list(large_list1, large_list2)
+list_time = time.time() - start_time
+print(f"List approach time: {list_time:.4f} seconds")
+
+     
