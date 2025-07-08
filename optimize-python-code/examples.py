@@ -42,4 +42,13 @@ common_list = find_common_elements_list(large_list1, large_list2)
 list_time = time.time() - start_time
 print(f"List approach time: {list_time:.4f} seconds")
 
-     
+# after
+def find_common_elements_set(list1, list2):
+    set2 = set(list2)  # Convert list to a set (one-time cost)
+    return [item for item in list1 if item in set2]  # Check membership in set
+
+start_time = time.time()
+common_set = find_common_elements_set(large_list1, large_list2)
+set_time = time.time() - start_time
+print(f"Set approach time: {set_time:.4f} seconds")
+print(f"Improvement: {list_time / set_time:.2f}x faster")
