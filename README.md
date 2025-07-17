@@ -6,6 +6,7 @@
 
 | Topic | Link to Code | Link to Tutorial|
 |-------|--------------|-----------------|
+| Python Math & Stats One-liners | [Code](https://github.com/balapriyac/python-basics/blob/main/useful-python-one-liners/python_math_n_stats_one_liners.ipynb) | [Tutorial](https://www.kdnuggets.com/10-python-math-statistical-analysis-one-liners)|
 | Optimize Python Code | [Code](https://github.com/balapriyac/python-basics/tree/main/optimize-python-code) | [Tutorial](https://www.kdnuggets.com/how-to-optimize-your-python-code-even-if-youre-a-beginner)|
 | functools & itertools| [Code](https://github.com/balapriyac/python-basics/tree/main/functools-n-itertools)|[Tutorial](https://www.kdnuggets.com/python-functools-itertools-7-super-handy-tools-for-smarter-code)|
 | Clean Python Crash Course | [Code](https://github.com/balapriyac/python-basics/tree/main/clean-python)|[Tutorial](https://www.kdnuggets.com/stop-writing-messy-python-a-clean-code-crash-course)|
