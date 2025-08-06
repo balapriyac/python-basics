@@ -6,6 +6,7 @@
 
 | Topic | Link to Code | Link to Tutorial|
 |-------|--------------|-----------------|
+| Makefiles for Python Projects | [Code]()|[Tutorial]()|
 | Python Math & Stats One-liners | [Code](https://github.com/balapriyac/python-basics/blob/main/useful-python-one-liners/python_math_n_stats_one_liners.ipynb) | [Tutorial](https://www.kdnuggets.com/10-python-math-statistical-analysis-one-liners)|
 | Python JSON One-liners | [Code](https://github.com/balapriyac/python-basics/blob/main/useful-python-one-liners/python_json_one_liners.ipynb)|[Tutorial](https://www.kdnuggets.com/10-python-one-liners-for-json-parsing-and-processing)|
 | Optimize Python Code | [Code](https://github.com/balapriyac/python-basics/tree/main/optimize-python-code) | [Tutorial](https://www.kdnuggets.com/how-to-optimize-your-python-code-even-if-youre-a-beginner)|
