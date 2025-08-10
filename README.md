@@ -6,8 +6,8 @@
 
 | Topic | Link to Code | Link to Tutorial|
 |-------|--------------|-----------------|
-| Makefiles for Python Projects | [Code](https://github.com/balapriyac/python-basics/tree/main/makefiles)|[Tutorial](https://www.kdnuggets.com/the-case-for-makefiles-in-python-projects-and-how-to-get-started)|
-| Python Math & Stats One-liners | [Code](https://github.com/balapriyac/python-basics/blob/main/useful-python-one-liners/python_math_n_stats_one_liners.ipynb) | [Tutorial](https://www.kdnuggets.com/10-python-math-statistical-analysis-one-liners)|
+| Makefiles for Python Projects | [Code](https://github.com/balapriyac/python-basics/tree/main/makefiles)|[The Case for Makefiles in Python Projects (And How to Get Started)](https://www.kdnuggets.com/the-case-for-makefiles-in-python-projects-and-how-to-get-started)|
+| Python Math & Stats One-liners | [Code](https://github.com/balapriyac/python-basics/blob/main/useful-python-one-liners/python_math_n_stats_one_liners.ipynb) | [10 Python Math & Statistical Analysis One-Liners](https://www.kdnuggets.com/10-python-math-statistical-analysis-one-liners)|
 | Python JSON One-liners | [Code](https://github.com/balapriyac/python-basics/blob/main/useful-python-one-liners/python_json_one_liners.ipynb)|[Tutorial](https://www.kdnuggets.com/10-python-one-liners-for-json-parsing-and-processing)|
 | Optimize Python Code | [Code](https://github.com/balapriyac/python-basics/tree/main/optimize-python-code) | [Tutorial](https://www.kdnuggets.com/how-to-optimize-your-python-code-even-if-youre-a-beginner)|
 | functools & itertools| [Code](https://github.com/balapriyac/python-basics/tree/main/functools-n-itertools)|[Tutorial](https://www.kdnuggets.com/python-functools-itertools-7-super-handy-tools-for-smarter-code)|
