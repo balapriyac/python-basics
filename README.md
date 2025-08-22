@@ -58,4 +58,5 @@
 | Useful Decorators | [Code](https://github.com/balapriyac/python-basics/tree/main/useful-decorators) | [Tutorial](https://www.kdnuggets.com/7-powerful-python-decorators-to-level-up-your-coding-game)|
 | Useless Python Functions | [Code](https://github.com/balapriyac/python-basics/blob/main/useful-python-functions/useless_python_functions.ipynb) | [Tutorial](https://www.kdnuggets.com/7-useless-python-standard-library-functions-you-should-know)|
 | Timedelta (work w/ time intervals) | [Code](https://github.com/balapriyac/python-basics/tree/main/timedelta) | [Tutorial](https://www.freecodecamp.org/news/how-to-use-timedelta-objects-in-python/)|
+|Logging in Python | [Code]()| [Logging in Python: A Developer’s Guide](https://blog.sentry.io/logging-in-python-a-developers-guide/)|
 
