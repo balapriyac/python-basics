@@ -6,6 +6,7 @@
 
 | Topic | Link to Code | Link to Tutorial|
 |-------|--------------|-----------------|
+|Custom Python Decorator Patterns |[Code](https://github.com/balapriyac/python-basics/tree/main/decorator-patterns)|[Custom Python Decorator Patterns Worth Copy-Pasting Forever](https://www.kdnuggets.com/custom-python-decorator-patterns-worth-copy-pasting-forever)|
 | Makefiles for Python Projects | [Code](https://github.com/balapriyac/python-basics/tree/main/makefiles)|[The Case for Makefiles in Python Projects (And How to Get Started)](https://www.kdnuggets.com/the-case-for-makefiles-in-python-projects-and-how-to-get-started)|
 | Python Math & Stats One-liners | [Code](https://github.com/balapriyac/python-basics/blob/main/useful-python-one-liners/python_math_n_stats_one_liners.ipynb) | [10 Python Math & Statistical Analysis One-Liners](https://www.kdnuggets.com/10-python-math-statistical-analysis-one-liners)|
 | Python JSON One-liners | [Code](https://github.com/balapriyac/python-basics/blob/main/useful-python-one-liners/python_json_one_liners.ipynb)|[10 Python One-Liners for JSON Parsing and Processing](https://www.kdnuggets.com/10-python-one-liners-for-json-parsing-and-processing)|
