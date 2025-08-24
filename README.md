@@ -36,7 +36,7 @@
 |Writing Better Python Functions|[Code](https://github.com/balapriyac/python-basics/tree/main/write-better-funcs)|[Tutorial](https://www.kdnuggets.com/5-tips-for-writing-better-python-functions)|
 |Function Arguments|[Code](https://github.com/balapriyac/python-basics/tree/main/function-args)|[Tutorial](https://www.kdnuggets.com/2023/02/python-function-arguments-definitive-guide.html)|
 | Partial Functions|[Code](https://github.com/balapriyac/python-basics/tree/main/partial-functions)|[Tutorial](https://www.kdnuggets.com/partial-functions-in-python-a-guide-for-developers)|
-|Useful Python Functions| [Code](https://github.com/balapriyac/python-basics/tree/main/useful-python-functions)|[Tutorial](https://www.kdnuggets.com/lesser-known-python-functions-that-are-super-useful)|
+|Useful Python Functions| [Code](https://github.com/balapriyac/python-basics/tree/main/useful-python-functions)|[Lesser-Known Python Functions That Are Super Useful](https://www.kdnuggets.com/lesser-known-python-functions-that-are-super-useful)|
 |For-Else Loop Construct| [Code](https://github.com/balapriyac/python-basics/tree/main/for-else) | [Tutorial](https://www.freecodecamp.org/news/for-else-loop-in-python/)|
 |SQLite Tutorial| [Code](https://github.com/balapriyac/python-basics/tree/main/sqlite-tut)|[Tutorial](https://www.kdnuggets.com/a-guide-to-working-with-sqlite-databases-in-python)|
 |Psycopg2 Tutorial| [Code](https://github.com/balapriyac/psycopg2-tutorial) | [Tutorial](https://earthly.dev/blog/psycopg2-postgres-python/)|
