@@ -31,4 +31,29 @@ growth_rates = [(quarterly_totals[i] - quarterly_totals[i-1]) / quarterly_totals
                 for i in range(1, len(quarterly_totals))]
 print(f"Growth rates: {[f'{rate:.1f}%' for rate in growth_rates]}")
 
+import bisect
 
+# Maintain a high-score leaderboard that stays sorted
+class Leaderboard:
+    def __init__(self):
+        self.scores = []
+        self.players = []
+
+    def add_score(self, player, score):
+        # Insert maintaining descending order
+        pos = bisect.bisect_left([-s for s in self.scores], -score)
+        self.scores.insert(pos, score)
+        self.players.insert(pos, player)
+
+    def top_players(self, n=5):
+        return list(zip(self.players[:n], self.scores[:n]))
+
+# Demo the leaderboard
+board = Leaderboard()
+scores = [("Alice", 2850), ("Bob", 3100), ("Carol", 2650),
+          ("David", 3350), ("Eva", 2900)]
+
+for player, score in scores:
+    board.add_score(player, score)
+
+print("Top 3 players:", board.top_players(3))
