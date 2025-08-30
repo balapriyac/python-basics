@@ -57,3 +57,25 @@ for player, score in scores:
     board.add_score(player, score)
 
 print("Top 3 players:", board.top_players(3))
+
+import heapq
+
+# Analyze customer satisfaction survey results
+survey_responses = [
+    ("Restaurant A", 4.8), ("Restaurant B", 3.2), ("Restaurant C", 4.9),
+    ("Restaurant D", 2.1), ("Restaurant E", 4.7), ("Restaurant F", 1.8),
+    ("Restaurant G", 4.6), ("Restaurant H", 3.8), ("Restaurant I", 4.4),
+    ("Restaurant J", 2.9), ("Restaurant K", 4.2), ("Restaurant L", 3.5)
+]
+
+# Find top performers and underperformers without full sorting
+top_rated = heapq.nlargest(3, survey_responses, key=lambda x: x[1])
+worst_rated = heapq.nsmallest(3, survey_responses, key=lambda x: x[1])
+
+print("Excellence awards:", [name for name, rating in top_rated])
+print("Needs improvement:", [name for name, rating in worst_rated])
+
+# Calculate performance spread
+best_score = top_rated[0][1]
+worst_score = worst_rated[0][1]
+print(f"Performance range: {worst_score} to {best_score} ({best_score - worst_score:.1f} point spread)")
