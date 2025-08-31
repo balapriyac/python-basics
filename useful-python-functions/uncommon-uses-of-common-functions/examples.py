@@ -1,3 +1,4 @@
+# GROUPBY
 from itertools import groupby
 
 # Analyze user activity patterns from server logs
@@ -14,6 +15,7 @@ print(activity_patterns)
 total_duration = sum(count for action, count in activity_patterns)
 print(f"Session lasted {total_duration} actions")
 
+# MATRIX TRANSPOSE WITH zip()
 # Quarterly sales data organized by product lines
 quarterly_sales = [
     [120, 135, 148, 162],  # Product A by quarter
@@ -31,6 +33,7 @@ growth_rates = [(quarterly_totals[i] - quarterly_totals[i-1]) / quarterly_totals
                 for i in range(1, len(quarterly_totals))]
 print(f"Growth rates: {[f'{rate:.1f}%' for rate in growth_rates]}")
 
+# BISECT
 import bisect
 
 # Maintain a high-score leaderboard that stays sorted
@@ -58,6 +61,7 @@ for player, score in scores:
 
 print("Top 3 players:", board.top_players(3))
 
+# HEAPQ
 import heapq
 
 # Analyze customer satisfaction survey results
@@ -79,3 +83,29 @@ print("Needs improvement:", [name for name, rating in worst_rated])
 best_score = top_rated[0][1]
 worst_score = worst_rated[0][1]
 print(f"Performance range: {worst_score} to {best_score} ({best_score - worst_score:.1f} point spread)")
+
+# ITEMGETTER FOR MULTI-LEVEL SORT
+from operator import itemgetter
+
+# Employee performance data: (name, department, performance_score, hire_date)
+employees = [
+    ("Sarah", "Engineering", 94, "2022-03-15"),
+    ("Mike", "Sales", 87, "2021-07-22"),
+    ("Jennifer", "Engineering", 91, "2020-11-08"),
+    ("Carlos", "Marketing", 89, "2023-01-10"),
+    ("Lisa", "Sales", 92, "2022-09-03"),
+    ("David", "Engineering", 88, "2021-12-14"),
+    ("Amanda", "Marketing", 95, "2020-05-18")
+]
+
+sorted_employees = sorted(employees, key=itemgetter(1, 2))
+# For descending performance within department:
+dept_performance_sorted = sorted(employees, key=lambda x: (x[1], -x[2]))
+
+print("Department performance rankings:")
+current_dept = None
+for name, dept, score, hire_date in dept_performance_sorted:
+    if dept != current_dept:
+        print(f"\n{dept} Department:")
+        current_dept = dept
+    print(f"  {name}: {score}/100")
