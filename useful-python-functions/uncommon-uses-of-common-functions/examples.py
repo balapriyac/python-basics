@@ -109,3 +109,74 @@ for name, dept, score, hire_date in dept_performance_sorted:
         print(f"\n{dept} Department:")
         current_dept = dept
     print(f"  {name}: {score}/100")
+
+# DEFAULTDICT
+from collections import defaultdict
+
+books_data = [
+    ("1984", "George Orwell", "Dystopian Fiction", 1949),
+    ("Dune", "Frank Herbert", "Science Fiction", 1965),
+    ("Pride and Prejudice", "Jane Austen", "Romance", 1813),
+    ("The Hobbit", "J.R.R. Tolkien", "Fantasy", 1937),
+    ("Foundation", "Isaac Asimov", "Science Fiction", 1951),
+    ("Emma", "Jane Austen", "Romance", 1815)
+]
+
+# Create multiple indexes simultaneously
+catalog = {
+    'by_author': defaultdict(list),
+    'by_genre': defaultdict(list),
+    'by_decade': defaultdict(list)
+}
+
+for title, author, genre, year in books_data:
+    catalog['by_author'][author].append((title, year))
+    catalog['by_genre'][genre].append((title, author))
+    catalog['by_decade'][year // 10 * 10].append((title, author))
+
+# Query the catalog
+print("Jane Austen books:", dict(catalog['by_author'])['Jane Austen'])
+print("Science Fiction titles:", len(catalog['by_genre']['Science Fiction']))
+print("1960s publications:", dict(catalog['by_decade']).get(1960, []))
+
+# string.Template
+from string import Template
+
+report_template = Template("""
+=== SYSTEM PERFORMANCE REPORT ===
+Generated: $timestamp
+Server: $server_name
+
+CPU Usage: $cpu_usage%
+Memory Usage: $memory_usage%
+Disk Space: $disk_usage%
+
+Active Connections: $active_connections
+Error Rate: $error_rate%
+
+${detailed_metrics}
+
+Status: $overall_status
+Next Check: $next_check_time
+""")
+
+# Simulate partial monitoring data (some sensors might be offline)
+monitoring_data = {
+    'timestamp': '2024-01-15 14:30:00',
+    'server_name': 'web-server-01',
+    'cpu_usage': '23.4',
+    'memory_usage': '67.8',
+    # Missing: disk_usage, active_connections, error_rate, detailed_metrics
+    'overall_status': 'OPERATIONAL',
+    'next_check_time': '15:30:00'
+}
+
+# Generate report with available data, leaving gaps for missing info
+report = report_template.safe_substitute(monitoring_data)
+print(report)
+# Output shows available data filled in, missing variables left as $placeholders
+print("\n" + "="*50)
+print("Missing data can be filled in later:")
+additional_data = {'disk_usage': '45.2', 'error_rate': '0.1'}
+updated_report = Template(report).safe_substitute(additional_data)
+print("Disk usage now shows:", "45.2%" in updated_report)
