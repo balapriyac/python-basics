@@ -34,8 +34,8 @@
 | Unit Testing (Python Functions) | [Code](https://github.com/balapriyac/python-basics/tree/main/unit-testing/functions)| [How to Write Unit Tests for Python Functions](https://www.freecodecamp.org/news/how-to-write-unit-tests-for-python-functions/)|
 | Unit Testing (Instance Methods) | [Code](https://github.com/balapriyac/python-basics/tree/main/unit-testing/classes)| [How to Write Unit Tests for Instance Methods in Python](https://www.freecodecamp.org/news/how-to-write-unit-tests-for-instance-methods-in-python/)|
 |Tips for Handling Large Datasets| [Code](https://github.com/balapriyac/python-basics/tree/main/handle-large-datasets) | [Tips for Handling Large Datasets in Python](https://www.kdnuggets.com/tips-handling-large-datasets-python)|
-|Caching in Python| [Code](https://github.com/balapriyac/python-basics/tree/main/caching)| [Tutorial](https://www.kdnuggets.com/how-to-speed-up-python-code-with-caching)|
-| Creating Custom Exceptions|[Code](https://github.com/balapriyac/python-basics/tree/main/custom-exceptions)|[Tutorial](https://www.kdnuggets.com/how-and-why-to-create-custom-exceptions-in-python)|
+|Caching in Python| [Code](https://github.com/balapriyac/python-basics/tree/main/caching)| [How To Speed Up Python Code with Caching](https://www.kdnuggets.com/how-to-speed-up-python-code-with-caching)|
+| Creating Custom Exceptions|[Code](https://github.com/balapriyac/python-basics/tree/main/custom-exceptions)|[How (and Why) To Create Custom Exceptions in Python](https://www.kdnuggets.com/how-and-why-to-create-custom-exceptions-in-python)|
 |Writing Better Python Functions|[Code](https://github.com/balapriyac/python-basics/tree/main/write-better-funcs)|[Tutorial](https://www.kdnuggets.com/5-tips-for-writing-better-python-functions)|
 |Function Arguments|[Code](https://github.com/balapriyac/python-basics/tree/main/function-args)|[Tutorial](https://www.kdnuggets.com/2023/02/python-function-arguments-definitive-guide.html)|
 | Partial Functions|[Code](https://github.com/balapriyac/python-basics/tree/main/partial-functions)|[Tutorial](https://www.kdnuggets.com/partial-functions-in-python-a-guide-for-developers)|
