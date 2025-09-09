@@ -37,6 +37,7 @@
 |Caching in Python| [Code](https://github.com/balapriyac/python-basics/tree/main/caching)| [How To Speed Up Python Code with Caching](https://www.kdnuggets.com/how-to-speed-up-python-code-with-caching)|
 | Creating Custom Exceptions|[Code](https://github.com/balapriyac/python-basics/tree/main/custom-exceptions)|[How (and Why) To Create Custom Exceptions in Python](https://www.kdnuggets.com/how-and-why-to-create-custom-exceptions-in-python)|
 | Coding Interview Tips | [Code](https://github.com/balapriyac/python-basics/tree/main/coding-interview-tips) | [7 Must-Know Python Tips for Coding Interviews](https://www.kdnuggets.com/2023/03/7-mustknow-python-tips-coding-interviews.html)|
+| Intro to Indexes in SQL | [Code](https://github.com/balapriyac/python-basics/tree/main/sql-index)|[How To Speed Up SQL Queries Using Indexes [Python Edition]](https://www.kdnuggets.com/2023/08/speed-sql-queries-indexes-python-edition.html)|
 |Writing Better Python Functions|[Code](https://github.com/balapriyac/python-basics/tree/main/write-better-funcs)|[Tutorial](https://www.kdnuggets.com/5-tips-for-writing-better-python-functions)|
 |Function Arguments|[Code](https://github.com/balapriyac/python-basics/tree/main/function-args)|[Tutorial](https://www.kdnuggets.com/2023/02/python-function-arguments-definitive-guide.html)|
 | Partial Functions|[Code](https://github.com/balapriyac/python-basics/tree/main/partial-functions)|[Tutorial](https://www.kdnuggets.com/partial-functions-in-python-a-guide-for-developers)|
