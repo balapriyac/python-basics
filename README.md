@@ -45,8 +45,8 @@
 | Docker for Python Developers | [Code](https://github.com/balapriyac/python-basics/tree/main/intro-to-docker) | [A Gentle Introduction to Docker for Python Developers](https://www.kdnuggets.com/a-gentle-introduction-to-docker-for-python-developers)|
 |For-Else Loop Construct| [Code](https://github.com/balapriyac/python-basics/tree/main/for-else) | [How Does Python's For-Else Loop Construct Work?](https://www.freecodecamp.org/news/for-else-loop-in-python/)|
 |SQLite Tutorial| [Code](https://github.com/balapriyac/python-basics/tree/main/sqlite-tut)|[A Guide to Working with SQLite Databases in Python](https://www.kdnuggets.com/a-guide-to-working-with-sqlite-databases-in-python)|
-|Psycopg2 Tutorial| [Code](https://github.com/balapriyac/psycopg2-tutorial) | [Tutorial](https://earthly.dev/blog/psycopg2-postgres-python/)|
-|Handling Key Errors|[Code](https://github.com/balapriyac/python-basics/tree/main/keyerrors) |[Tutorial](https://www.freecodecamp.org/news/how-to-handle-keyerror-exceptions-in-python/)|
+|Psycopg2 Tutorial| [Code](https://github.com/balapriyac/psycopg2-tutorial) | [PostgreSQL in Python Using Psycopg2](https://earthly.dev/blog/psycopg2-postgres-python/)|
+|Handling Key Errors|[Code](https://github.com/balapriyac/python-basics/tree/main/keyerrors) |[How to Handle KeyErrors in Python – with Code Examples](https://www.freecodecamp.org/news/how-to-handle-keyerror-exceptions-in-python/)|
 |Common Python Gotchas!| [Code](https://github.com/balapriyac/python-basics/tree/main/common-gotchas) | [Tutorial](https://www.kdnuggets.com/5-common-python-gotchas-and-how-to-avoid-them)|
 | Python Oddities | [Code](https://github.com/balapriyac/python-basics/blob/main/common-gotchas/python_oddities.ipynb) | [Tutorial](https://www.kdnuggets.com/python-oddities-might-surprise-you)|
 |Custom Context Managers in Python| [Code](https://github.com/balapriyac/python-basics/tree/main/custom_context_manager)|[Tutorial](https://www.kdnuggets.com/how-to-create-custom-context-managers-in-python)|
