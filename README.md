@@ -47,9 +47,9 @@
 |SQLite Tutorial| [Code](https://github.com/balapriyac/python-basics/tree/main/sqlite-tut)|[A Guide to Working with SQLite Databases in Python](https://www.kdnuggets.com/a-guide-to-working-with-sqlite-databases-in-python)|
 |Psycopg2 Tutorial| [Code](https://github.com/balapriyac/psycopg2-tutorial) | [PostgreSQL in Python Using Psycopg2](https://earthly.dev/blog/psycopg2-postgres-python/)|
 |Handling Key Errors|[Code](https://github.com/balapriyac/python-basics/tree/main/keyerrors) |[How to Handle KeyErrors in Python – with Code Examples](https://www.freecodecamp.org/news/how-to-handle-keyerror-exceptions-in-python/)|
-|Common Python Gotchas!| [Code](https://github.com/balapriyac/python-basics/tree/main/common-gotchas) | [Tutorial](https://www.kdnuggets.com/5-common-python-gotchas-and-how-to-avoid-them)|
-| Python Oddities | [Code](https://github.com/balapriyac/python-basics/blob/main/common-gotchas/python_oddities.ipynb) | [Tutorial](https://www.kdnuggets.com/python-oddities-might-surprise-you)|
-|Custom Context Managers in Python| [Code](https://github.com/balapriyac/python-basics/tree/main/custom_context_manager)|[Tutorial](https://www.kdnuggets.com/how-to-create-custom-context-managers-in-python)|
+|Common Python Gotchas!| [Code](https://github.com/balapriyac/python-basics/tree/main/common-gotchas) | [5 Common Python Gotchas (And How To Avoid Them)](https://www.kdnuggets.com/5-common-python-gotchas-and-how-to-avoid-them)|
+| Python Oddities | [Code](https://github.com/balapriyac/python-basics/blob/main/common-gotchas/python_oddities.ipynb) | [Python Oddities That Might Surprise You](https://www.kdnuggets.com/python-oddities-might-surprise-you)|
+|Custom Context Managers in Python| [Code](https://github.com/balapriyac/python-basics/tree/main/custom_context_manager)|[How To Create Custom Context Managers in Python](https://www.kdnuggets.com/how-to-create-custom-context-managers-in-python)|
 |Convert Python Dict to JSON |[Code](https://github.com/balapriyac/python-basics/tree/main/dict-to-json) | [Tutorial](https://www.kdnuggets.com/convert-python-dict-to-json-a-tutorial-for-beginners)|
 |Building Enumerations in Python |[Code](https://github.com/balapriyac/python-basics/tree/main/enums) | [Tutorial](https://www.kdnuggets.com/python-enum-how-to-build-enumerations-in-python)
 |Natural Sorting (Install `natsort` with pip) | [Code](https://github.com/balapriyac/python-basics/tree/main/natural-sorting) | [Tutorial](https://www.kdnuggets.com/exploring-natural-sorting-in-python)
