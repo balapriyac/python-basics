@@ -38,3 +38,14 @@ for person in salaries:
 averages = {role: totals[role] / counts[role] for role in totals}
 
 print(averages)
+
+ages = [29, 34, 29, 41, 34, 29]
+
+freq = {}
+
+for age in ages:
+    freq[age] = freq.get(age, 0) + 1
+
+most_common = max(freq.items(), key=lambda x: x[1])
+
+print(f"Most common age: {most_common[0]} (appears {most_common[1]} times)")
