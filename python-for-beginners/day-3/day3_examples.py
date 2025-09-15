@@ -24,6 +24,18 @@ text = " The price is $5,000!  "
 clean = text.strip().lower().replace("$", "").replace(",", "").replace("!", "")
 print(clean)  
 
+email = "  Alice.Johnson@Example.com  "
+email = email.strip().lower()
+
+username, domain = email.split("@")
+
+print(f"User: {username}, Domain: {domain}")
+
+comment = "I'm learning Python and SQL for data jobs."
+
+if "python" in comment.lower():
+    print("Mentioned Python")
+
 # Word count
 word_count = len(clean.split())
 
