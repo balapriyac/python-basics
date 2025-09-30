@@ -66,4 +66,5 @@
 | Useless Python Functions | [Code](https://github.com/balapriyac/python-basics/blob/main/useful-python-functions/useless_python_functions.ipynb) | [7 “Useless” Python Standard Library Functions You Should Know](https://www.kdnuggets.com/7-useless-python-standard-library-functions-you-should-know)|
 | Timedelta (work w/ time intervals) | [Code](https://github.com/balapriyac/python-basics/tree/main/timedelta) | [How to Use timedelta Objects in Python to Work with Dates](https://www.freecodecamp.org/news/how-to-use-timedelta-objects-in-python/)|
 |Logging in Python | [Code](https://github.com/balapriyac/python-basics/tree/main/logging)| [Logging in Python: A Developer’s Guide](https://blog.sentry.io/logging-in-python-a-developers-guide/)|
+|Python for Data Science 101 | [Code](https://github.com/balapriyac/python-basics/tree/main/python-for-beginners)| [Python for Data Science (Free 7-Day Mini-Course) ](https://www.kdnuggets.com/python-for-data-science-free-7-day-mini-course)|
 
