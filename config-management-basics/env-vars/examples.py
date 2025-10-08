@@ -14,6 +14,8 @@ max_connections = int(os.environ.get('MAX_CONNECTIONS', '10'))
 
 total_capacity = database_port + max_connections  # Now this works with integers
 
+debug_mode = os.environ.get('DEBUG', 'False').lower() in ('true', '1', 'yes')
+
 # Set an environment variable
 os.environ['APP_ENV'] = 'development'
 os.environ['MAX_CONNECTIONS'] = '100'
