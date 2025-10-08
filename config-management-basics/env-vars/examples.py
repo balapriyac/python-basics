@@ -9,6 +9,11 @@ database_port = os.environ.get('DATABASE_PORT', '5432')
 
 print(f"Connecting to {database_host}:{database_port}")
 
+database_port = int(os.environ.get('DATABASE_PORT', '5432'))
+max_connections = int(os.environ.get('MAX_CONNECTIONS', '10'))
+
+total_capacity = database_port + max_connections  # Now this works with integers
+
 # Set an environment variable
 os.environ['APP_ENV'] = 'development'
 os.environ['MAX_CONNECTIONS'] = '100'
