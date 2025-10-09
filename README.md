@@ -67,4 +67,4 @@
 | Timedelta (work w/ time intervals) | [Code](https://github.com/balapriyac/python-basics/tree/main/timedelta) | [How to Use timedelta Objects in Python to Work with Dates](https://www.freecodecamp.org/news/how-to-use-timedelta-objects-in-python/)|
 |Logging in Python | [Code](https://github.com/balapriyac/python-basics/tree/main/logging)| [Logging in Python: A Developer’s Guide](https://blog.sentry.io/logging-in-python-a-developers-guide/)|
 |Python for Data Science 101 | [Code](https://github.com/balapriyac/python-basics/tree/main/python-for-beginners)| [Python for Data Science (Free 7-Day Mini-Course) ](https://www.kdnuggets.com/python-for-data-science-free-7-day-mini-course)|
-
+| Working with Env Vars| [Code](https://github.com/balapriyac/python-basics/tree/main/config-management-basics/env-vars)|[How to Work with Environment Variables in Python](https://www.freecodecamp.org/news/how-to-work-with-environment-variables-in-python/)|
