@@ -59,3 +59,51 @@ account = Account(
     email="john@example.com",
     password="secretpass123"
 )
+
+from pydantic import BaseModel
+from typing import List, Optional
+from datetime import datetime
+
+class Address(BaseModel):
+    street: str
+    city: str
+    state: str
+    zip_code: str
+
+    @field_validator('zip_code')
+    def validate_zip(cls, v):
+        if not v.isdigit() or len(v) != 5:
+            raise ValueError('ZIP code must be 5 digits')
+        return v
+
+class Contact(BaseModel):
+    name: str
+    phone: str
+    email: Optional[str] = None
+
+class Company(BaseModel):
+    name: str
+    founded: datetime
+    address: Address
+    contacts: List[Contact]
+    employee_count: int
+    is_public: bool = False
+
+# Complex nested data gets fully validated
+company_data = {
+    "name": "Tech Corp",
+    "founded": "2020-01-15T10:00:00",
+    "address": {
+        "street": "123 Main St",
+        "city": "San Francisco",
+        "state": "CA",
+        "zip_code": "94105"
+    },
+    "contacts": [
+        {"name": "John Smith", "phone": "555-0123"},
+        {"name": "Jane Doe", "phone": "555-0456", "email": "jane@techcorp.com"}
+    ],
+    "employee_count": 150
+}
+
+company = Company(**company_data)
