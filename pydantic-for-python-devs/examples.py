@@ -159,3 +159,35 @@ if api_response.data:
     user = UserProfile(**api_response.data)
     print(f"User {user.username} created at {user.created_at}")
 
+
+from pydantic import BaseModel
+from datetime import datetime
+
+class Event(BaseModel):
+    name: str
+    date: datetime
+    attendees: int
+    is_public: bool = True
+
+event = Event(
+    name="Python Meetup",
+    date=datetime(2024, 3, 15, 18, 30),
+    attendees=45
+)
+
+# Export to dictionary
+event_dict = event.model_dump()
+print(event_dict)
+
+# Export to JSON string
+event_json = event.model_dump_json()
+print(event_json)
+
+# Export with exclusions
+public_data = event.model_dump(exclude={'attendees'})
+print(public_data)
+
+# Export with custom serialization
+formatted_json = event.model_dump_json(indent=2)
+print(formatted_json)
+
