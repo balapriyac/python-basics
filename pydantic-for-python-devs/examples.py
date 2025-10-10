@@ -159,6 +159,42 @@ if api_response.data:
     user = UserProfile(**api_response.data)
     print(f"User {user.username} created at {user.created_at}")
 
+from pydantic import BaseModel, ValidationError
+from typing import List
+
+class Order(BaseModel):
+    order_id: int
+    customer_email: str
+    items: List[str]
+    total: float
+
+    @field_validator('total')
+    def positive_total(cls, v):
+        if v <= 0:
+            raise ValueError('Total must be positive')
+        return v
+
+# Invalid data
+bad_data = {
+    "order_id": "not_a_number",
+    "customer_email": "invalid_email",
+    "items": "should_be_list",
+    "total": -10.50
+}
+
+try:
+    order = Order(**bad_data)
+except ValidationError as e:
+    print("Validation errors:")
+    for error in e.errors():
+        field = error['loc'][0]
+        message = error['msg']
+        print(f"  {field}: {message}")
+
+    # Get JSON representation of errors
+    print("\nJSON errors:")
+    print(e.json(indent=2))
+
 
 from pydantic import BaseModel
 from datetime import datetime
