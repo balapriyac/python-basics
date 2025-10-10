@@ -107,3 +107,55 @@ company_data = {
 }
 
 company = Company(**company_data)
+
+
+from pydantic import BaseModel, Field, field_validator
+from typing import Union, Optional
+from datetime import datetime
+import json
+
+class APIResponse(BaseModel):
+    status: str
+    message: Optional[str] = None
+    data: Optional[dict] = None
+    timestamp: datetime = Field(default_factory=datetime.now)
+
+class UserProfile(BaseModel):
+    id: int
+    username: str
+    full_name: Optional[str] = None
+    age: Optional[int] = Field(None, ge=0, le=150)  # Age constraints
+    created_at: Union[datetime, str]  # Handle multiple formats
+    is_verified: bool = False
+
+    @field_validator('created_at', mode='before')
+    def parse_created_at(cls, v):
+        if isinstance(v, str):
+            try:
+                return datetime.fromisoformat(v.replace('Z', '+00:00'))
+            except ValueError:
+                raise ValueError('Invalid datetime format')
+        return v
+
+# Simulate API response
+api_json = '''
+{
+    "status": "success",
+    "data": {
+        "id": 123,
+        "username": "alice_dev",
+        "full_name": "Alice Johnson",
+        "age": "28",
+        "created_at": "2023-01-15T10:30:00Z",
+        "is_verified": true
+    }
+}
+'''
+
+response_data = json.loads(api_json)
+api_response = APIResponse(**response_data)
+
+if api_response.data:
+    user = UserProfile(**api_response.data)
+    print(f"User {user.username} created at {user.created_at}")
+
