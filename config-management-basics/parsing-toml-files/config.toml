@@ -1,0 +1,34 @@
+# Application configuration
+title = "My Application"
+version = "1.0.0"
+
+[database]
+host = "localhost"
+port = 5432
+username = "app_user"
+password = "secure_password"
+databases = ["myapp_db", "myapp_cache"]
+pool_size = 10
+ssl_enabled = true
+
+[server]
+host = "0.0.0.0"
+port = 8000
+debug = false
+allowed_hosts = ["localhost", "127.0.0.1", "example.com"]
+
+[logging]
+level = "INFO"
+format = "%(asctime)s - %(levelname)s - %(message)s"
+handlers = ["console", "file"]
+
+[cache]
+enabled = true
+ttl = 3600
+max_size = 1000
+
+[features]
+enable_api = true
+enable_webhooks = false
+rate_limit = 100
+
