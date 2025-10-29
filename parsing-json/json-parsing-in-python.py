@@ -74,3 +74,22 @@ print(f"First product ID: {first_product['id']}")
 
 available_products = [p for p in products if p["in_stock"]]
 print(f"Available: {len(available_products)} products")
+
+# First, let's create a sample config
+config_data = {
+    "api_url": "https://api.example.com/v2",
+    "timeout": 30,
+    "retry_attempts": 3,
+    "enable_logging": True
+}
+
+with open('config.json', 'w') as f:
+    json.dump(config_data, f, indent=2)
+
+with open('config.json', 'r') as f:
+    config = json.load(f)
+
+print(f"API URL: {config['api_url']}")
+print(f"Timeout: {config['timeout']} seconds")
+print(f"Logging: {'Enabled' if config['enable_logging'] else 'Disabled'}")
+
