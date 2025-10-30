@@ -93,3 +93,51 @@ print(f"API URL: {config['api_url']}")
 print(f"Timeout: {config['timeout']} seconds")
 print(f"Logging: {'Enabled' if config['enable_logging'] else 'Disabled'}")
 
+
+def parse_json_safely(json_string):
+    try:
+        return json.loads(json_string)
+    except json.JSONDecodeError as e:
+        print(f"JSON parsing failed: {e.msg}")
+        print(f"Error at line {e.lineno}, column {e.colno}")
+        return None
+
+# Missing closing quote
+bad_json1 = '{"name": "Sarah, "age": 28}'
+result1 = parse_json_safely(bad_json1)
+print(f"Result 1: {result1}\n")
+
+# Missing closing brace
+bad_json2 = '{"name": "Sarah", "age": 28'
+result2 = parse_json_safely(bad_json2)
+print(f"Result 2: {result2}\n")
+
+# Extra comma
+bad_json3 = '{"name": "Sarah", "age": 28,}'
+result3 = parse_json_safely(bad_json3)
+print(f"Result 3: {result3}\n")
+
+# Valid JSON for comparison
+good_json = '{"name": "Sarah", "age": 28}'
+result4 = parse_json_safely(good_json)
+print(f"Result 4: {result4}")
+
+def load_json_file_safely(filepath):
+    try:
+        with open(filepath, 'r') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print(f"Error: File '{filepath}' not found")
+        return None
+    except PermissionError:
+        print(f"Error: Permission denied reading '{filepath}'")
+        return None
+    except json.JSONDecodeError as e:
+        print(f"Error: Invalid JSON in '{filepath}'")
+        print(f"  {e.msg} at line {e.lineno}")
+        return None
+
+data = load_json_file_safely('missing_file.json')
+if data is None:
+    print("Using default configuration")
+    data = {"timeout": 30, "retries": 3}
