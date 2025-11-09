@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+    <product id="101">
+        <name>Wireless Keyboard</name>
+        <price currency="USD">29.99</price>
+        <stock>45</stock>
+        <categories>
+            <category>Electronics</category>
+            <category>Accessories</category>
+        </categories>
+    </product>
+    <product id="102">
+        <name>USB Mouse</name>
+        <price currency="USD">15.99</price>
+        <stock>120</stock>
+        <categories>
+            <category>Electronics</category>
+        </categories>
+    </product>
+</catalog>
