@@ -172,5 +172,3 @@ for filename in files_created:
 
 print("="*60)
 print(f"Total size: {total_size:.1f} MB")
-
-print("     num_rows/num_customers variables at the top of each section.")
