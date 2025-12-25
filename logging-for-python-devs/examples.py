@@ -111,3 +111,24 @@ def call_external_api(user_id):
 
 fetch_user_data(123)
 
+# from logger_config
+
+from logger_config import setup_logger
+
+logger = setup_logger(__name__)
+
+def calculate_discount(price, discount_percent):
+    logger.debug(f'Calculating discount: {price} * {discount_percent}%')
+    
+    if discount_percent < 0 or discount_percent > 100:
+        logger.warning(f'Invalid discount percentage: {discount_percent}')
+        discount_percent = max(0, min(100, discount_percent))
+    
+    discount = price * (discount_percent / 100)
+    final_price = price - discount
+    
+    logger.info(f'Applied {discount_percent}% discount: ${price} -> ${final_price}')
+    return final_price
+
+calculate_discount(100, 20)
+calculate_discount(100, 150)
