@@ -1,7 +1,8 @@
 import logging
 import json
 from datetime import datetime, timezone
-
+import os
+from logging.handlers import RotatingFileHandler, TimedRotatingFileHandler
 
 
 logger = logging.getLogger('my_app')
@@ -208,7 +209,6 @@ def calculate_total(items):
 process_order('ORD-12345', 'USER-789')
 
 # Rotating log files
-from logging.handlers import RotatingFileHandler, TimedRotatingFileHandler
 
 def setup_rotating_logger(name):
     logger = logging.getLogger(name)
@@ -250,3 +250,69 @@ for i in range(1000):
     logger.debug(f'Record {i} details: completed in {i * 0.1}ms')
 
 
+# diff envs
+
+def configure_environment_logger(app_name):
+    """Configure logger based on environment"""
+    environment = os.getenv('APP_ENV', 'development')
+    
+    logger = logging.getLogger(app_name)
+    
+    # Clear existing handlers
+    logger.handlers = []
+    
+    if environment == 'development':
+        # Development: verbose console output
+        logger.setLevel(logging.DEBUG)
+        handler = logging.StreamHandler()
+        handler.setLevel(logging.DEBUG)
+        formatter = logging.Formatter(
+            '%(levelname)s - %(name)s - %(funcName)s:%(lineno)d - %(message)s'
+        )
+        handler.setFormatter(formatter)
+        logger.addHandler(handler)
+        
+    elif environment == 'staging':
+        # Staging: detailed file logs + important console messages
+        logger.setLevel(logging.DEBUG)
+        
+        file_handler = logging.FileHandler('staging.log')
+        file_handler.setLevel(logging.DEBUG)
+        file_formatter = logging.Formatter(
+            '%(asctime)s - %(name)s - %(levelname)s - %(funcName)s - %(message)s'
+        )
+        file_handler.setFormatter(file_formatter)
+        
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(logging.WARNING)
+        console_formatter = logging.Formatter('%(levelname)s: %(message)s')
+        console_handler.setFormatter(console_formatter)
+        
+        logger.addHandler(file_handler)
+        logger.addHandler(console_handler)
+        
+    elif environment == 'production':
+        # Production: structured logs, errors only to console
+        logger.setLevel(logging.INFO)
+        
+        file_handler = logging.handlers.RotatingFileHandler(
+            'production.log',
+            maxBytes=50 * 1024 * 1024,  # 50 MB
+            backupCount=10
+        )
+        file_handler.setLevel(logging.INFO)
+        file_formatter = logging.Formatter(
+            '{"timestamp": "%(asctime)s", "level": "%(levelname)s", '
+            '"logger": "%(name)s", "message": "%(message)s"}'
+        )
+        file_handler.setFormatter(file_formatter)
+        
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(logging.ERROR)
+        console_formatter = logging.Formatter('%(levelname)s: %(message)s')
+        console_handler.setFormatter(console_formatter)
+        
+        logger.addHandler(file_handler)
+        logger.addHandler(console_handler)
+    
+    return logger
