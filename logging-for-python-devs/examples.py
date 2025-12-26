@@ -207,4 +207,46 @@ def calculate_total(items):
 
 process_order('ORD-12345', 'USER-789')
 
+# Rotating log files
+from logging.handlers import RotatingFileHandler, TimedRotatingFileHandler
+
+def setup_rotating_logger(name):
+    logger = logging.getLogger(name)
+    logger.setLevel(logging.DEBUG)
+
+    # Size-based rotation: rotate when file reaches 10MB
+    size_handler = RotatingFileHandler(
+        'app_size_rotation.log',
+        maxBytes=10 * 1024 * 1024,  # 10 MB
+        backupCount=5  # Keep 5 old files
+    )
+    size_handler.setLevel(logging.DEBUG)
+
+    # Time-based rotation: rotate daily at midnight
+    time_handler = TimedRotatingFileHandler(
+        'app_time_rotation.log',
+        when='midnight',
+        interval=1,
+        backupCount=7  # Keep 7 days
+    )
+    time_handler.setLevel(logging.INFO)
+
+    formatter = logging.Formatter(
+        '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    )
+    size_handler.setFormatter(formatter)
+    time_handler.setFormatter(formatter)
+
+    logger.addHandler(size_handler)
+    logger.addHandler(time_handler)
+
+    return logger
+
+
+logger = setup_rotating_logger('rotating_app')
+
+for i in range(1000):
+    logger.info(f'Processing record {i}')
+    logger.debug(f'Record {i} details: completed in {i * 0.1}ms')
+
 
