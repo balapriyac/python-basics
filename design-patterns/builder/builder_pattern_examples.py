@@ -268,3 +268,71 @@ class HTTPRequestBuilderWithValidation:
         return self._request
 
 
+
+# ----------------------------------------------------------------------------
+# Example 5: Pythonic Builder Pattern
+# ----------------------------------------------------------------------------
+
+class EmailMessage:
+    """Email message with builder pattern using kwargs"""
+    def __init__(self, **kwargs):
+        self.to = kwargs.get('to', [])
+        self.cc = kwargs.get('cc', [])
+        self.bcc = kwargs.get('bcc', [])
+        self.subject = kwargs.get('subject', '')
+        self.body = kwargs.get('body', '')
+        self.attachments = kwargs.get('attachments', [])
+        self.priority = kwargs.get('priority', 'normal')
+    
+    def send(self):
+        """Simulate sending the email"""
+        recipients = len(self.to) + len(self.cc) + len(self.bcc)
+        attachments = f" with {len(self.attachments)} attachment(s)" if self.attachments else ""
+        return f"Sending '{self.subject}' to {recipients} recipient(s){attachments}"
+
+
+class EmailBuilder:
+    """Pythonic email builder"""
+    def __init__(self):
+        self._params = {}
+    
+    def to(self, *addresses):
+        """Add TO recipients"""
+        self._params.setdefault('to', []).extend(addresses)
+        return self
+    
+    def cc(self, *addresses):
+        """Add CC recipients"""
+        self._params.setdefault('cc', []).extend(addresses)
+        return self
+    
+    def subject(self, subject):
+        """Set email subject"""
+        self._params['subject'] = subject
+        return self
+    
+    def body(self, body):
+        """Set email body"""
+        self._params['body'] = body
+        return self
+    
+    def attach(self, *files):
+        """Attach files"""
+        self._params.setdefault('attachments', []).extend(files)
+        return self
+    
+    def priority(self, level):
+        """Set priority (low, normal, high)"""
+        if level not in ('low', 'normal', 'high'):
+            raise ValueError("Priority must be low, normal, or high")
+        self._params['priority'] = level
+        return self
+    
+    def build(self):
+        """Build the email message"""
+        if not self._params.get('to'):
+            raise ValueError("At least one recipient is required")
+        if not self._params.get('subject'):
+            raise ValueError("Subject is required")
+        
+        return EmailMessage(**self._params)
