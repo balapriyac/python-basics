@@ -215,5 +215,56 @@ class QueryBuilder:
         """Return the constructed query"""
         return self._query
 
+# ----------------------------------------------------------------------------
+# Example 4: Builder with Validation
+# ----------------------------------------------------------------------------
+
+class HTTPRequestBuilderWithValidation:
+    """Enhanced builder with validation"""
+    VALID_METHODS = {"GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"}
+    
+    def __init__(self, url):
+        if not url:
+            raise ValueError("URL cannot be empty")
+        if not url.startswith(("http://", "https://")):
+            raise ValueError("URL must start with http:// or https://")
+        
+        self._request = HTTPRequest(url)
+    
+    def method(self, method):
+        """Set HTTP method with validation"""
+        method = method.upper()
+        if method not in self.VALID_METHODS:
+            raise ValueError(f"Invalid HTTP method: {method}")
+        self._request.method = method
+        return self
+    
+    def timeout(self, seconds):
+        """Set timeout with validation"""
+        if seconds <= 0:
+            raise ValueError("Timeout must be positive")
+        if seconds > 300:
+            raise ValueError("Timeout cannot exceed 300 seconds")
+        self._request.timeout = seconds
+        return self
+    
+    def header(self, key, value):
+        """Add header with validation"""
+        if not key or not value:
+            raise ValueError("Header key and value cannot be empty")
+        self._request.headers[key] = value
+        return self
+    
+    def body(self, body):
+        """Set request body"""
+        self._request.body = body
+        return self
+    
+    def build(self):
+        """Validate and return the request"""
+        if self._request.method in {"POST", "PUT", "PATCH"} and not self._request.body:
+            raise ValueError(f"{self._request.method} requests typically require a body")
+        
+        return self._request
 
 
