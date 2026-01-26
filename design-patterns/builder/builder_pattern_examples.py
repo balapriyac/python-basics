@@ -336,3 +336,103 @@ class EmailBuilder:
             raise ValueError("Subject is required")
         
         return EmailMessage(**self._params)
+
+
+# ============================================================================
+# USAGE EXAMPLES
+# ============================================================================
+
+if __name__ == "__main__":
+    # Example 1: Basic HTTP Request Builder
+    print("\n1. Basic HTTP Request Builder:")
+    print("-" * 80)
+    request = (HTTPRequestBuilder("https://api.example.com/users")
+        .method("POST")
+        .header("Content-Type", "application/json")
+        .header("Accept", "application/json")
+        .body('{"name": "John", "email": "john@example.com"}')
+        .timeout(60)
+        .auth("username", "password")
+        .disable_redirects()
+        .build())
+    
+    print(request.execute())
+    print(f"Headers: {request.headers}")
+    print(f"Allow redirects: {request.allow_redirects}")
+    
+    # Example 2: Simple SQL Query
+    print("\n\n2. Simple SQL Query:")
+    print("-" * 80)
+    simple_query = (QueryBuilder()
+        .select("id", "name", "email")
+        .from_table("users")
+        .where("status = 'active'")
+        .order_by("name")
+        .limit(10)
+        .build())
+    
+    print(simple_query.to_sql())
+    
+    # Example 3: Complex SQL Query
+    print("\n\n3. Complex SQL Query with Joins:")
+    print("-" * 80)
+    complex_query = (QueryBuilder()
+        .select("u.name", "COUNT(o.id) as order_count", "SUM(o.total) as total_spent")
+        .from_table("users u")
+        .left_join("orders o", "u.id = o.user_id")
+        .where("u.created_at >= '2024-01-01'")
+        .where("u.country = 'US'")
+        .group_by("u.id", "u.name")
+        .having("COUNT(o.id) > 5")
+        .order_by("total_spent DESC")
+        .limit(20)
+        .build())
+    
+    print(complex_query.to_sql())
+    
+    # Example 4: Builder with Validation
+    print("\n\n4. Builder with Validation:")
+    print("-" * 80)
+    
+    try:
+        valid_request = (HTTPRequestBuilderWithValidation("https://api.example.com/data")
+            .method("POST")
+            .body('{"key": "value"}')
+            .timeout(45)
+            .build())
+        print("✓ Valid request created successfully")
+    except ValueError as e:
+        print(f"✗ Error: {e}")
+    
+    try:
+        invalid_request = (HTTPRequestBuilderWithValidation("https://api.example.com/data")
+            .method("INVALID")
+            .build())
+    except ValueError as e:
+        print(f"✓ Caught error: {e}")
+    
+    try:
+        invalid_request = (HTTPRequestBuilderWithValidation("https://api.example.com/data")
+            .method("POST")
+            .build())
+    except ValueError as e:
+        print(f"✓ Caught error: {e}")
+    
+    # Example 5: Pythonic Email Builder
+    print("\n\n5. Pythonic Email Builder:")
+    print("-" * 80)
+    email = (EmailBuilder()
+        .to("alice@example.com", "bob@example.com")
+        .cc("manager@example.com")
+        .subject("Q4 Sales Report")
+        .body("Please find the Q4 sales report attached.")
+        .attach("q4_report.pdf", "sales_data.xlsx")
+        .priority("high")
+        .build())
+    
+    print(email.send())
+    print(f"To: {email.to}")
+    print(f"CC: {email.cc}")
+    print(f"Priority: {email.priority}")
+    print(f"Attachments: {email.attachments}")
+
