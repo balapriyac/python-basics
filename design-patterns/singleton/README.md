@@ -1,0 +1,1 @@
+Example code for the article [How to Build a Singleton in Python (and Why You Probably Shouldn't)](https://www.freecodecamp.org/news/how-to-build-a-singleton-in-python-and-why-you-probably-shouldnt/) on the freeCodeCamp blog
