@@ -1,3 +1,4 @@
+# email validation
 import re
 
 def validate_email(email):
@@ -55,4 +56,18 @@ def validate_email(email):
     
     return True, "Valid email"
 
+# Test valid emails
+test_emails = [
+    "user@example.com",
+    "john.doe@company.co.uk",
+    "test+filter@domain.io",
+    "invalid@@example.com",
+    "no-domain@test",
+    "@example.com",
+    "user@.com"
+]
 
+for email in test_emails:
+    valid, message = validate_email(email)
+    status = "✓" if valid else "✗"
+    print(f"{status} {email:30} - {message}")
