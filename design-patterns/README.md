@@ -4,4 +4,5 @@ This is the index for the *Design Patterns in Python* article series I'm writing
 - [How to Use the Builder Pattern in Python – A Practical Guide for Developers](https://www.freecodecamp.org/news/how-to-use-the-builder-pattern-in-python-a-practical-guide-for-devs/)
 - [How to Use the Factory Pattern in Python - A Practical Guide](https://www.freecodecamp.org/news/how-to-use-the-factory-pattern-in-python-a-practical-guide/)
 - [How to Implement the Observer Pattern in Python](https://www.freecodecamp.org/news/how-to-implement-the-observer-pattern-in-python/)
+- [How to Implement the Strategy Pattern in Python](https://www.freecodecamp.org/news/how-to-implement-the-strategy-pattern-in-python/)
 
