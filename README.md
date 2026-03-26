@@ -94,4 +94,5 @@
 | Recursion for Beginners | [Code](https://github.com/balapriyac/python-basics/tree/main/recursion)|[Recursion in Python – A Practical Introduction for Beginners](https://www.freecodecamp.org/news/recursion-in-python-intro-for-beginners/)|
 | Descriptive Stats with Python | [Code](https://github.com/balapriyac/python-basics/blob/main/stats-with-python/stats_with_python_1.ipynb)|[Descriptive Statistics with Python for Beginner Data Scientists](https://dev.to/balapriya/descriptive-statistics-with-python-for-beginner-data-scientists-1001)|
 | Speed Up Slow Code | [Code](https://github.com/balapriyac/python-basics/tree/main/speed-up-slow-python-code)|[How to Speed Up Slow Python Code Even If You’re a Beginner](https://www.kdnuggets.com/how-to-speed-up-slow-python-code-even-if-youre-a-beginner)|
+| DIY Error Handling Functions | [Code](https://github.com/balapriyac/python-basics/tree/main/DIY-python-funcs/error_handling)|[5 Useful DIY Python Functions for Error Handling](https://www.kdnuggets.com/5-useful-diy-python-functions-for-error-handling)|
 
