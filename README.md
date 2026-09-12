@@ -4,7 +4,7 @@
 > 
 ![fimg-python-tutorials](https://i.imgur.com/4KchgGD.png)
 
-| Topic | Link to Code | Link to Tutorial|
+| Topic | Link to the Code | Link to the Tutorial|
 |-------|--------------|-----------------|
 |Custom Python Decorator Patterns |[Code](https://github.com/balapriyac/python-basics/tree/main/decorator-patterns)|[Custom Python Decorator Patterns Worth Copy-Pasting Forever](https://www.kdnuggets.com/custom-python-decorator-patterns-worth-copy-pasting-forever)|
 | Makefiles for Python Projects | [Code](https://github.com/balapriyac/python-basics/tree/main/makefiles)|[The Case for Makefiles in Python Projects (And How to Get Started)](https://www.kdnuggets.com/the-case-for-makefiles-in-python-projects-and-how-to-get-started)|
@@ -99,3 +99,4 @@
 | Vector Search from Scratch| [Code](https://github.com/balapriyac/python-basics/tree/main/vector-search-from-scratch)|[How to Build Vector Search From Scratch in Python](https://www.kdnuggets.com/how-to-build-vector-search-from-scratch-in-python)|
 | Context-Aware Search | [Code](https://github.com/balapriyac/python-basics/tree/main/context-aware-search)|[Building Context-Aware Search in Python with LLM Embeddings + Metadata](https://machinelearningmastery.com/building-context-aware-search-in-python-with-llm-embeddings-metadata/)|
 | Data Classes | [Code]( https://github.com/balapriyac/python-basics/tree/main/dataclass-examples)| [Python Data Classes Beyond the Boilerplate](https://www.kdnuggets.com/python-dataclasses-beyond-the-boilerplate)| 
+| Spaghetti Code -> Clean Python | [Code](https://github.com/balapriyac/python-basics/tree/main/refactoring-messy-python-code)|[From Spaghetti Code to Clean Python: A Beginner’s Guide](https://www.kdnuggets.com/from-spaghetti-code-to-clean-python-a-beginners-guide)|
