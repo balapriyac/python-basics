@@ -4,7 +4,7 @@ todo_cli.py
 
 A small command-line to-do list manager. Tasks persist between runs in a
 local JSON file, so your list is right where you left it. Built with
-argparse subcommands as a beginner-friendly example of a "real" CLI tool.
+argparse subcommands as a beginner-friendly example of a CLI tool.
 
 Usage:
     python 04_todo_cli.py add "Write the quarterly report"
