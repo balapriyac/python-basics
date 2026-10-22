@@ -45,3 +45,11 @@ python scripts/05_log_file_analyzer.py app.log --level ERROR --since 2026-09-20
 
 Each script also supports `-h` / `--help` for the full list of options.
 
+## Notes
+
+- **Script 1** skips files it can't open (e.g. corrupted images or unsupported formats) rather than stopping the whole batch, and never modifies your original files — output always goes to a separate folder.
+- **Script 2** always shows a dry-run preview first; nothing is renamed until you pass `--apply`. It also refuses to proceed if the rename would create filename collisions.
+- **Script 3** expects a plain `.txt` file. It uses a small built-in stop-word list to keep the "top words" list meaningful rather than dominated by "the", "and", etc.
+- **Script 4** stores tasks as plain JSON at `~/.todo_cli.json` by default (override with `--store`), so the file is easy to inspect, back up, or sync yourself.
+- **Script 5** expects log lines in the form `YYYY-MM-DD HH:MM:SS LEVEL message...`. Lines that don't match this format are skipped and counted separately rather than causing an error — adjust the regular expression at the top of the script if your logs use a different format.
+
