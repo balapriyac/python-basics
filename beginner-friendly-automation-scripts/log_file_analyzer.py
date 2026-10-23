@@ -11,10 +11,10 @@ Expects log lines that start with a timestamp and a level, e.g.:
     2026-09-20 14:03:12 INFO  Retrying connection...
 
 Usage:
-    python 05_log_file_analyzer.py app.log --level ERROR
-    python 05_log_file_analyzer.py app.log --keyword timeout
-    python 05_log_file_analyzer.py app.log --since 2026-09-20 --until 2026-09-21
-    python 05_log_file_analyzer.py app.log --level WARNING --keyword disk --tail 10
+    python log_file_analyzer.py app.log --level ERROR
+    python log_file_analyzer.py app.log --keyword timeout
+    python log_file_analyzer.py app.log --since 2026-09-20 --until 2026-09-21
+    python log_file_analyzer.py app.log --level WARNING --keyword disk --tail 10
 """
 
 import argparse
