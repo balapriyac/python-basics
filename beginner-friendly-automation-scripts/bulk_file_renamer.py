@@ -9,13 +9,13 @@ pass --apply, so you can preview the result safely first.
 
 Usage:
     # Preview adding a prefix (dry run, nothing is renamed yet)
-    python 02_bulk_file_renamer.py photos/ --mode prefix --value "vacation_"
+    python bulk_file_renamer.py photos/ --mode prefix --value "vacation_"
 
     # Actually apply a sequential rename: photo_001.jpg, photo_002.jpg, ...
-    python 02_bulk_file_renamer.py photos/ --mode sequence --value "photo_" --apply
+    python bulk_file_renamer.py photos/ --mode sequence --value "photo_" --apply
 
     # Find and replace text in filenames
-    python 02_bulk_file_renamer.py exports/ --mode replace --find "draft" --replace "final" --apply
+    python bulk_file_renamer.py exports/ --mode replace --find "draft" --replace "final" --apply
 """
 
 import argparse
