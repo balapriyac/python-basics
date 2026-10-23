@@ -10,7 +10,7 @@ Requires pillow:
     pip install pillow
 
 Usage:
-    python 01_image_resizer_watermarker.py photos/ photos_out/ \
+    python image_resizer_watermarker.py photos/ photos_out/ \
         --max-size 1200 --watermark "(c) My Studio" --position bottom-right
 """
 
