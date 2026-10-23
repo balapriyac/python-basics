@@ -7,7 +7,7 @@ length, the most frequently used words (excluding common stop words),
 and an estimated reading time.
 
 Usage:
-    python 03_text_word_frequency_analyzer.py essay.txt --top 15 --wpm 200
+    python text_word_frequency_analyzer.py essay.txt --top 15 --wpm 200
 """
 
 import argparse
