@@ -7,11 +7,11 @@ local JSON file, so your list is right where you left it. Built with
 argparse subcommands as a beginner-friendly example of a CLI tool.
 
 Usage:
-    python 04_todo_cli.py add "Write the quarterly report"
-    python 04_todo_cli.py list
-    python 04_todo_cli.py list --all
-    python 04_todo_cli.py done 2
-    python 04_todo_cli.py remove 2
+    python todo_cli.py add "Write the quarterly report"
+    python todo_cli.py list
+    python todo_cli.py list --all
+    python todo_cli.py done 2
+    python todo_cli.py remove 2
 """
 
 import argparse
