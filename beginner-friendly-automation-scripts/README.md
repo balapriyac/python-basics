@@ -2,6 +2,8 @@
 
 Five short, self-contained scripts that automate everyday tasks — spanning image processing, file handling, text analysis, and the command line. 
 
+Read the article: [5 Useful Python Automation Scripts for Beginners](https://www.kdnuggets.com/5-useful-python-automation-scripts-for-beginners)
+
 ## Requirements
 
 - Python 3.11+
