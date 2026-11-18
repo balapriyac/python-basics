@@ -2,7 +2,7 @@
 
 Get a YouTube video's transcript in a few lines of Python. The script sends one request to the [Olostep](https://www.olostep.com) Scrapes API with the `@olostep/youtube-transcript` parser and prints the channel, the language and every line with its timestamp.
 
-Read the step-by-step tutorial: [link to article]
+Read the step-by-step tutorial: [How to Extract YouTube Transcripts with Python and Olostep](https://dev.to/balapriya/how-to-extract-youtube-transcripts-with-python-and-olostep-i22)
 
 ## Prerequisites
 
